@@ -5,7 +5,7 @@ import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
 import { Ed25519Keypair } from '@mysten/sui.js/keypairs/ed25519';
 import { TransactionBlock } from '@mysten/sui.js/transactions';
 import { fromB64, toB64 } from '@mysten/sui.js/utils';
-import { SuiEvent, SuiTransactionBlockResponse } from '@mysten/sui.js/client';
+import type { SuiTransactionBlockResponse } from '@mysten/sui.js/client';
 
 // Types for blockchain operations
 export interface ZKProof {
@@ -72,9 +72,30 @@ export class SuiBlockchainService {
     this.client = new SuiClient({ url: rpcUrl });
     this.packageId = config.packageId;
 
-    // Initialize keypair if private key provided
-    if (config.privateKey) {
-      this.keypair = Ed25519Keypair.fromSecretKey(fromB64(config.privateKey));
+    // Initialize keypair if private key provided and valid
+    if (config.privateKey && config.privateKey !== 'your-sui-private-key') {
+      try {
+        let secretKey: Uint8Array;
+        
+        // Try different private key formats
+        if (config.privateKey.startsWith('0x')) {
+          // Hex format: 0x...
+          const hexString = config.privateKey.slice(2); // Remove 0x prefix
+          secretKey = new Uint8Array(Buffer.from(hexString, 'hex'));
+        } else if (config.privateKey.startsWith('suiprivkey')) {
+          // Bech32 format (2024+): suiprivkey...
+          // Note: Need to decode Bech32 first (simplified for now)
+          throw new Error('Bech32 private keys not yet supported. Use hex or base64 format.');
+        } else {
+          // Assume base64 format
+          secretKey = fromB64(config.privateKey);
+        }
+        
+        this.keypair = Ed25519Keypair.fromSecretKey(secretKey);
+        console.log('Sui keypair initialized successfully');
+      } catch (error) {
+        console.warn('Invalid SUI private key provided, blockchain signing will be disabled. Error:', error.message);
+      }
     }
   }
 

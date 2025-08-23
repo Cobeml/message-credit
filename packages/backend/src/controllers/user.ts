@@ -1,9 +1,11 @@
 // User management controllers for profile management and GDPR compliance
 
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import { UserService, UpdateUserProfileData, UpdateGDPRConsentData } from '../services/user.js';
-import { APIResponse, APIError, ErrorCodes } from '../types/index.js';
+import { UserService } from '../services/user.js';
+import type { UpdateUserProfileData, UpdateGDPRConsentData } from '../services/user.js';
+import type { APIResponse } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 import { z } from 'zod';
 import winston from 'winston';
 

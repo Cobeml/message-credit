@@ -1,4 +1,4 @@
-import { Client as Anthropic } from '@anthropic-ai/sdk';
+import Anthropic from '@anthropic-ai/sdk';
 import crypto from 'crypto';
 import { BigFiveTraits, TrustScore, ScoreExplanation, AIAnalysis, BiasFlag, ErrorCodes } from '../types/index.js';
 
@@ -18,7 +18,7 @@ export interface ClaudeAPIConfig {
 export class ClaudeIntegrationService implements PersonalityAnalysisService {
   private client: Anthropic;
   private config: ClaudeAPIConfig;
-  private readonly MODEL_VERSION = 'claude-3-sonnet-20240229';
+  private readonly MODEL_VERSION = 'claude-3-5-sonnet-20241022';
 
   constructor(config: ClaudeAPIConfig) {
     this.config = config;

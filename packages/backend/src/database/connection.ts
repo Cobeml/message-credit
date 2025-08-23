@@ -1,9 +1,10 @@
 // Database connection utilities with connection pooling
 
 import { PrismaClient } from '@prisma/client';
-import { createClient, RedisClientType } from 'redis';
+import { createClient } from 'redis';
+import type { RedisClientType } from 'redis';
 import winston from 'winston';
-import { DatabaseConfig, RedisConfig } from '../types/index.js';
+import type { DatabaseConfig, RedisConfig } from '../types/index.js';
 
 // Configure logger
 const logger = winston.createLogger({

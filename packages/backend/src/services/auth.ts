@@ -3,7 +3,8 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { PrismaClient } from '@prisma/client';
-import { User, GDPRConsent, APIError, ErrorCodes } from '../types/index.js';
+import type { User, GDPRConsent } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 import winston from 'winston';
 
 const logger = winston.createLogger({

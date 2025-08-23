@@ -1,0 +1,69 @@
+{
+  "reliable_user": {
+    "user_id": "alex_reliable_001",
+    "traits": {
+      "conscientiousness": 100,
+      "neuroticism": 37,
+      "agreeableness": 75,
+      "openness": 65,
+      "extraversion": 49,
+      "confidence": 95
+    },
+    "trust_score": {
+      "score": 80,
+      "traits": {
+        "conscientiousness": 100,
+        "neuroticism": 37,
+        "agreeableness": 75,
+        "openness": 65,
+        "extraversion": 49,
+        "confidence": 95
+      },
+      "confidenceLevel": 95,
+      "lastUpdated": "2025-08-23T18:32:28.407Z",
+      "expiresAt": "2025-09-22T18:32:28.407Z"
+    },
+    "analyzed_at": "2025-08-23T18:32:28.408Z",
+    "message_count": 20
+  },
+  "unreliable_user": {
+    "user_id": "jordan_unreliable_001",
+    "traits": {
+      "conscientiousness": 48,
+      "neuroticism": 100,
+      "agreeableness": 55,
+      "openness": 53,
+      "extraversion": 43,
+      "confidence": 95
+    },
+    "trust_score": {
+      "score": 38,
+      "traits": {
+        "conscientiousness": 48,
+        "neuroticism": 100,
+        "agreeableness": 55,
+        "openness": 53,
+        "extraversion": 43,
+        "confidence": 95
+      },
+      "confidenceLevel": 95,
+      "lastUpdated": "2025-08-23T18:32:28.408Z",
+      "expiresAt": "2025-09-22T18:32:28.408Z"
+    },
+    "analyzed_at": "2025-08-23T18:32:28.409Z",
+    "message_count": 20
+  },
+  "analysis_comparison": {
+    "conscientiousnessGap": 52,
+    "neuroticismGap": 63,
+    "trustGap": 42,
+    "validationResults": {
+      "reliableConscientiousness": true,
+      "unreliableNeuroticism": true,
+      "conscientiousDiff": true,
+      "neuroticismDiff": true,
+      "trustDiff": true
+    },
+    "accuracy": 100
+  }
+}
