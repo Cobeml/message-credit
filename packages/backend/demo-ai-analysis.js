@@ -73,6 +73,37 @@ class MockClaudeIntegrationService {
         opennessScore, extraversionScore
       }).length) * 2
     ));
+
+    // Generate semantic overview based on detected patterns
+    const isReliable = conscientiousnessScore > 70 && neuroticismScore < 50;
+    const hasFinancialStress = neuroticismScore > 60;
+    const isOrganized = conscientiousnessScore > 60;
+
+    const semantic_overview = {
+      summary: isReliable ? 
+        "The user demonstrates strong financial discipline with consistent planning and organization. Their communication patterns indicate responsible money management and low financial stress levels." :
+        "The user shows financial stress patterns with limited organizational habits. Their messages indicate emotional spending decisions and difficulty with financial planning consistency.",
+      
+      conscientiousness_reasoning: isOrganized ?
+        "High conscientiousness evidenced by frequent mentions of budgeting, early bill payments, savings goals, and systematic financial planning approaches." :
+        "Low conscientiousness shown through missed payments, lack of planning, impulsive decisions, and reactive rather than proactive financial management.",
+        
+      neuroticism_reasoning: hasFinancialStress ?
+        "High neuroticism reflected in frequent expressions of financial anxiety, stress-driven spending, worry about money, and emotional language around financial decisions." :
+        "Low neuroticism demonstrated by calm financial discussions, stable decision-making, confidence in financial plans, and minimal emotional reactivity to money matters.",
+        
+      risk_factors: isReliable ? 
+        ["Potential overconfidence in financial planning", "May lack flexibility in changing market conditions"] :
+        ["High financial stress affecting decision quality", "Emotional spending patterns", "Inconsistent payment behaviors"],
+        
+      strengths: isReliable ?
+        ["Consistent financial planning and execution", "Early payment patterns reduce risk", "Strong organizational financial habits"] :
+        ["Shows awareness of financial challenges", "Expresses genuine concern for financial improvement"],
+        
+      trustworthiness_indicators: isReliable ?
+        "Strong trustworthiness indicators include proactive financial management, consistent payment patterns, and disciplined approach to debt and savings. The user demonstrates reliability through systematic financial behaviors." :
+        "Limited trustworthiness due to financial stress patterns, reactive decision-making, and inconsistent financial behaviors. The user shows vulnerability to emotional financial decisions that may impact loan repayment reliability."
+    };
     
     return {
       conscientiousness: Math.round(conscientiousnessScore),
@@ -80,7 +111,8 @@ class MockClaudeIntegrationService {
       agreeableness: Math.round(agreeablenessScore),
       openness: Math.round(opennessScore),
       extraversion: Math.round(extraversionScore),
-      confidence: Math.round(confidence)
+      confidence: Math.round(confidence),
+      semantic_overview
     };
   }
 
@@ -153,6 +185,14 @@ async function runAnalysisDemo() {
   console.log(`  Extraversion: ${reliableTraits.extraversion}/100`);
   console.log(`  Confidence: ${reliableTraits.confidence}/100`);
   console.log(`\n💯 Trust Score: ${reliableTrust.score}/100 ${reliableTrust.score > 70 ? '✅ TRUSTWORTHY' : '❌ RISKY'}`);
+  
+  if (reliableTraits.semantic_overview) {
+    console.log('\n📋 SEMANTIC OVERVIEW:');
+    console.log(`  Summary: ${reliableTraits.semantic_overview.summary}`);
+    console.log(`  Strengths: ${reliableTraits.semantic_overview.strengths.join(', ')}`);
+    console.log(`  Risk Factors: ${reliableTraits.semantic_overview.risk_factors.join(', ')}`);
+    console.log(`  Trustworthiness: ${reliableTraits.semantic_overview.trustworthiness_indicators}`);
+  }
 
   console.log('\n📊 UNRELIABLE USER ANALYSIS (Jordan):');
   console.log('=====================================');
@@ -170,6 +210,14 @@ async function runAnalysisDemo() {
   console.log(`  Extraversion: ${unreliableTraits.extraversion}/100`);
   console.log(`  Confidence: ${unreliableTraits.confidence}/100`);
   console.log(`\n💯 Trust Score: ${unreliableTrust.score}/100 ${unreliableTrust.score < 50 ? '✅ RISKY' : '❌ TRUSTWORTHY'}`);
+  
+  if (unreliableTraits.semantic_overview) {
+    console.log('\n📋 SEMANTIC OVERVIEW:');
+    console.log(`  Summary: ${unreliableTraits.semantic_overview.summary}`);
+    console.log(`  Strengths: ${unreliableTraits.semantic_overview.strengths.join(', ')}`);
+    console.log(`  Risk Factors: ${unreliableTraits.semantic_overview.risk_factors.join(', ')}`);
+    console.log(`  Trustworthiness: ${unreliableTraits.semantic_overview.trustworthiness_indicators}`);
+  }
 
   // Comparative Analysis
   const conscientiousnessGap = reliableTraits.conscientiousness - unreliableTraits.conscientiousness;

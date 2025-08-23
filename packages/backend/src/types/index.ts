@@ -173,6 +173,15 @@ export interface Payment {
   notes?: string;
 }
 
+export interface SemanticOverview {
+  summary: string;
+  conscientiousness_reasoning: string;
+  neuroticism_reasoning: string;
+  risk_factors: string[];
+  strengths: string[];
+  trustworthiness_indicators: string;
+}
+
 export interface BigFiveTraits {
   conscientiousness: number; // 0-100, weight: 40%
   neuroticism: number;       // 0-100, weight: 25% (inverse)
@@ -180,6 +189,7 @@ export interface BigFiveTraits {
   openness: number;          // 0-100, weight: 10%
   extraversion: number;      // 0-100, weight: 5%
   confidence: number;        // Overall confidence in analysis
+  semantic_overview?: SemanticOverview;
 }
 
 export interface TrustScore {

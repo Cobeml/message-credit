@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import crypto from 'crypto';
-import { BigFiveTraits, TrustScore, ScoreExplanation, AIAnalysis, BiasFlag, ErrorCodes } from '../types/index.js';
+import { BigFiveTraits, TrustScore, ScoreExplanation, AIAnalysis, BiasFlag, ErrorCodes, SemanticOverview } from '../types/index.js';
 
 export interface PersonalityAnalysisService {
   analyzeMessageHistory(messages: string[]): Promise<BigFiveTraits>;
@@ -169,39 +169,55 @@ export class ClaudeIntegrationService implements PersonalityAnalysisService {
   private buildPersonalityAnalysisPrompt(messages: string[]): string {
     const messageText = messages.join('\n\n');
     
-    return `You are a psychological assessment expert specializing in the Big Five personality model. Analyze the following text messages and extract personality traits.
+    return `You are a psychological assessment expert specializing in the Big Five personality model for financial trustworthiness evaluation. Analyze the following text messages and provide both personality scores and a semantic overview.
 
-IMPORTANT INSTRUCTIONS:
-1. Focus only on personality traits, not demographic characteristics
-2. Base analysis on communication patterns, word choice, and expressed attitudes
-3. Avoid bias based on topics discussed or cultural references
-4. Provide confidence scores based on text quality and quantity
+CRITICAL PRIVACY REQUIREMENTS:
+- NEVER include any proper names, usernames, or identifying information in your response
+- Replace any names with generic terms like "the user", "someone", "a person"
+- Do NOT reference specific individuals mentioned in the messages
+- Focus on behavioral patterns, not personal details
+
+ANALYSIS REQUIREMENTS:
+1. Extract Big Five personality traits based on communication patterns
+2. Focus on financial behavior indicators and decision-making patterns
+3. Provide evidence-based reasoning for each trait score
+4. Generate a professional semantic overview explaining the trustworthiness assessment
+5. Avoid bias based on topics discussed or cultural references
 
 TEXT TO ANALYZE:
 ${messageText}
 
-Please analyze these messages and provide scores (0-100) for each Big Five trait:
-
-1. CONSCIENTIOUSNESS: Organization, responsibility, self-discipline, goal-orientation
-2. NEUROTICISM: Emotional instability, anxiety, moodiness, stress sensitivity  
-3. AGREEABLENESS: Cooperation, trust, empathy, altruism
-4. OPENNESS: Creativity, curiosity, openness to experience, intellectual interests
-5. EXTRAVERSION: Sociability, assertiveness, energy, positive emotions
-
-Respond with ONLY a JSON object in this exact format:
+Respond with ONLY a JSON object in this EXACT format (no additional text):
 {
   "conscientiousness": <score 0-100>,
-  "neuroticism": <score 0-100>,
+  "neuroticism": <score 0-100>, 
   "agreeableness": <score 0-100>,
   "openness": <score 0-100>,
   "extraversion": <score 0-100>,
-  "confidence": <overall confidence 0-100>
+  "confidence": <overall confidence 0-100>,
+  "semantic_overview": {
+    "summary": "<2-3 sentence professional summary of user's financial behavior patterns>",
+    "conscientiousness_reasoning": "<specific evidence from messages supporting conscientiousness score>",
+    "neuroticism_reasoning": "<specific evidence from messages supporting neuroticism score>", 
+    "risk_factors": ["<list of 2-3 key risk factors identified>"],
+    "strengths": ["<list of 2-3 key financial strengths identified>"],
+    "trustworthiness_indicators": "<explanation of why user appears trustworthy or risky based on behavioral patterns>"
+  }
 }
 
-Base confidence on:
-- Text quantity (more text = higher confidence)
-- Text quality (coherent, varied content = higher confidence)
-- Trait clarity (clear indicators = higher confidence)`;
+SCORING GUIDELINES:
+- CONSCIENTIOUSNESS (0-100): Organization, planning, financial responsibility, goal achievement
+- NEUROTICISM (0-100): Emotional instability, financial stress, anxiety-driven decisions  
+- AGREEABLENESS (0-100): Cooperation, reliability in commitments, relationship management
+- OPENNESS (0-100): Adaptability, learning from mistakes, strategic thinking
+- EXTRAVERSION (0-100): Communication style, social financial behaviors, assertiveness
+
+SEMANTIC OVERVIEW REQUIREMENTS:
+- Use professional, objective language
+- Focus on behavioral patterns and decision-making processes
+- Provide specific evidence from the message content
+- Explain connection between personality traits and financial trustworthiness
+- Maintain privacy by avoiding any personal identifiers`;
   }
 
   /**
@@ -266,13 +282,37 @@ Base confidence on:
         }
       }
 
+      // Validate semantic overview if present
+      let semantic_overview: SemanticOverview | undefined;
+      if (parsed.semantic_overview) {
+        const overview = parsed.semantic_overview;
+        if (typeof overview.summary !== 'string' ||
+            typeof overview.conscientiousness_reasoning !== 'string' ||
+            typeof overview.neuroticism_reasoning !== 'string' ||
+            !Array.isArray(overview.risk_factors) ||
+            !Array.isArray(overview.strengths) ||
+            typeof overview.trustworthiness_indicators !== 'string') {
+          throw new Error('Invalid semantic overview structure');
+        }
+        
+        semantic_overview = {
+          summary: overview.summary,
+          conscientiousness_reasoning: overview.conscientiousness_reasoning,
+          neuroticism_reasoning: overview.neuroticism_reasoning,
+          risk_factors: overview.risk_factors,
+          strengths: overview.strengths,
+          trustworthiness_indicators: overview.trustworthiness_indicators
+        };
+      }
+
       return {
         conscientiousness: Math.round(parsed.conscientiousness),
         neuroticism: Math.round(parsed.neuroticism),
         agreeableness: Math.round(parsed.agreeableness),
         openness: Math.round(parsed.openness),
         extraversion: Math.round(parsed.extraversion),
-        confidence: Math.round(parsed.confidence)
+        confidence: Math.round(parsed.confidence),
+        semantic_overview
       };
     } catch (error) {
       throw new Error(`Failed to parse personality traits: ${error instanceof Error ? error.message : 'Unknown error'}`);

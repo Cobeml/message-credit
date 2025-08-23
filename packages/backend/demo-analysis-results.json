@@ -7,7 +7,22 @@
       "agreeableness": 75,
       "openness": 65,
       "extraversion": 49,
-      "confidence": 95
+      "confidence": 95,
+      "semantic_overview": {
+        "summary": "The user demonstrates strong financial discipline with consistent planning and organization. Their communication patterns indicate responsible money management and low financial stress levels.",
+        "conscientiousness_reasoning": "High conscientiousness evidenced by frequent mentions of budgeting, early bill payments, savings goals, and systematic financial planning approaches.",
+        "neuroticism_reasoning": "Low neuroticism demonstrated by calm financial discussions, stable decision-making, confidence in financial plans, and minimal emotional reactivity to money matters.",
+        "risk_factors": [
+          "Potential overconfidence in financial planning",
+          "May lack flexibility in changing market conditions"
+        ],
+        "strengths": [
+          "Consistent financial planning and execution",
+          "Early payment patterns reduce risk",
+          "Strong organizational financial habits"
+        ],
+        "trustworthiness_indicators": "Strong trustworthiness indicators include proactive financial management, consistent payment patterns, and disciplined approach to debt and savings. The user demonstrates reliability through systematic financial behaviors."
+      }
     },
     "trust_score": {
       "score": 80,
@@ -17,13 +32,28 @@
         "agreeableness": 75,
         "openness": 65,
         "extraversion": 49,
-        "confidence": 95
+        "confidence": 95,
+        "semantic_overview": {
+          "summary": "The user demonstrates strong financial discipline with consistent planning and organization. Their communication patterns indicate responsible money management and low financial stress levels.",
+          "conscientiousness_reasoning": "High conscientiousness evidenced by frequent mentions of budgeting, early bill payments, savings goals, and systematic financial planning approaches.",
+          "neuroticism_reasoning": "Low neuroticism demonstrated by calm financial discussions, stable decision-making, confidence in financial plans, and minimal emotional reactivity to money matters.",
+          "risk_factors": [
+            "Potential overconfidence in financial planning",
+            "May lack flexibility in changing market conditions"
+          ],
+          "strengths": [
+            "Consistent financial planning and execution",
+            "Early payment patterns reduce risk",
+            "Strong organizational financial habits"
+          ],
+          "trustworthiness_indicators": "Strong trustworthiness indicators include proactive financial management, consistent payment patterns, and disciplined approach to debt and savings. The user demonstrates reliability through systematic financial behaviors."
+        }
       },
       "confidenceLevel": 95,
-      "lastUpdated": "2025-08-23T18:32:28.407Z",
-      "expiresAt": "2025-09-22T18:32:28.407Z"
+      "lastUpdated": "2025-08-23T18:48:06.119Z",
+      "expiresAt": "2025-09-22T18:48:06.119Z"
     },
-    "analyzed_at": "2025-08-23T18:32:28.408Z",
+    "analyzed_at": "2025-08-23T18:48:06.119Z",
     "message_count": 20
   },
   "unreliable_user": {
@@ -34,7 +64,22 @@
       "agreeableness": 55,
       "openness": 53,
       "extraversion": 43,
-      "confidence": 95
+      "confidence": 95,
+      "semantic_overview": {
+        "summary": "The user shows financial stress patterns with limited organizational habits. Their messages indicate emotional spending decisions and difficulty with financial planning consistency.",
+        "conscientiousness_reasoning": "Low conscientiousness shown through missed payments, lack of planning, impulsive decisions, and reactive rather than proactive financial management.",
+        "neuroticism_reasoning": "High neuroticism reflected in frequent expressions of financial anxiety, stress-driven spending, worry about money, and emotional language around financial decisions.",
+        "risk_factors": [
+          "High financial stress affecting decision quality",
+          "Emotional spending patterns",
+          "Inconsistent payment behaviors"
+        ],
+        "strengths": [
+          "Shows awareness of financial challenges",
+          "Expresses genuine concern for financial improvement"
+        ],
+        "trustworthiness_indicators": "Limited trustworthiness due to financial stress patterns, reactive decision-making, and inconsistent financial behaviors. The user shows vulnerability to emotional financial decisions that may impact loan repayment reliability."
+      }
     },
     "trust_score": {
       "score": 38,
@@ -44,13 +89,28 @@
         "agreeableness": 55,
         "openness": 53,
         "extraversion": 43,
-        "confidence": 95
+        "confidence": 95,
+        "semantic_overview": {
+          "summary": "The user shows financial stress patterns with limited organizational habits. Their messages indicate emotional spending decisions and difficulty with financial planning consistency.",
+          "conscientiousness_reasoning": "Low conscientiousness shown through missed payments, lack of planning, impulsive decisions, and reactive rather than proactive financial management.",
+          "neuroticism_reasoning": "High neuroticism reflected in frequent expressions of financial anxiety, stress-driven spending, worry about money, and emotional language around financial decisions.",
+          "risk_factors": [
+            "High financial stress affecting decision quality",
+            "Emotional spending patterns",
+            "Inconsistent payment behaviors"
+          ],
+          "strengths": [
+            "Shows awareness of financial challenges",
+            "Expresses genuine concern for financial improvement"
+          ],
+          "trustworthiness_indicators": "Limited trustworthiness due to financial stress patterns, reactive decision-making, and inconsistent financial behaviors. The user shows vulnerability to emotional financial decisions that may impact loan repayment reliability."
+        }
       },
       "confidenceLevel": 95,
-      "lastUpdated": "2025-08-23T18:32:28.408Z",
-      "expiresAt": "2025-09-22T18:32:28.408Z"
+      "lastUpdated": "2025-08-23T18:48:06.119Z",
+      "expiresAt": "2025-09-22T18:48:06.119Z"
     },
-    "analyzed_at": "2025-08-23T18:32:28.409Z",
+    "analyzed_at": "2025-08-23T18:48:06.120Z",
     "message_count": 20
   },
   "analysis_comparison": {
