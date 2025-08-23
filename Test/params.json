@@ -1,0 +1,14 @@
+{
+  "alpha": 0.65,
+  "beta": 0.35,
+  "lambdaPerType": {
+    "friend": 1.0,
+    "peer": 0.9,
+    "collaborator": 1.1,
+    "manager_of": 0.8,
+    "reports_to": 0.8
+  },
+  "lambdaTime": 0.008,
+  "clipMin": 0,
+  "clipMax": 900
+}

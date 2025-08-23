@@ -1,0 +1,10 @@
+{"id": "P001", "entityType": "Person", "name": "Alex Kim", "department": "Engineering", "role": "Manager", "baseScore": 120, "score": 120, "createdAt": "2025-02-27T00:00:00Z", "active": true}
+{"id": "P002", "entityType": "Person", "name": "Jordan Lee", "department": "Trading", "role": "Associate", "baseScore": 780, "score": 780, "createdAt": "2025-04-03T00:00:00Z", "active": false}
+{"id": "P003", "entityType": "Person", "name": "Riley Patel", "department": "Compliance", "role": "Associate", "baseScore": 528, "score": 528, "createdAt": "2024-11-22T00:00:00Z", "active": true}
+{"id": "P004", "entityType": "Person", "name": "Samira Chen", "department": "Operations", "role": "Manager", "baseScore": 465, "score": 465, "createdAt": "2024-10-24T00:00:00Z", "active": false}
+{"id": "P005", "entityType": "Person", "name": "Diego Alvarez", "department": "Trading", "role": "Manager", "baseScore": 494, "score": 494, "createdAt": "2024-10-29T00:00:00Z", "active": false}
+{"id": "P006", "entityType": "Person", "name": "Priya Singh", "department": "Engineering", "role": "Director", "baseScore": 685, "score": 685, "createdAt": "2025-03-17T00:00:00Z", "active": true}
+{"id": "P007", "entityType": "Person", "name": "Morgan Davis", "department": "Trading", "role": "Engineer", "baseScore": 607, "score": 607, "createdAt": "2025-04-01T00:00:00Z", "active": true}
+{"id": "P008", "entityType": "Person", "name": "Chen Wei", "department": "Engineering", "role": "Associate", "baseScore": 406, "score": 406, "createdAt": "2025-02-17T00:00:00Z", "active": true}
+{"id": "P009", "entityType": "Person", "name": "Taylor Brooks", "department": "Risk", "role": "Analyst", "baseScore": 421, "score": 421, "createdAt": "2024-12-05T00:00:00Z", "active": true}
+{"id": "P010", "entityType": "Person", "name": "Casey Morgan", "department": "Operations", "role": "Director", "baseScore": 228, "score": 228, "createdAt": "2024-11-29T00:00:00Z", "active": true}
