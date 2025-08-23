@@ -11,6 +11,7 @@ module community_lending::loan_manager {
     use sui::clock::{Self, Clock};
     use std::vector;
     use std::string::{Self, String};
+    use std::option::{Self, Option};
     use community_lending::zk_verifier::{Self, ZKProof, VerificationResult};
 
     // Error codes
@@ -30,6 +31,26 @@ module community_lending::loan_manager {
     const STATUS_COMPLETED: u8 = 3;
     const STATUS_DEFAULTED: u8 = 4;
     const STATUS_DISPUTED: u8 = 5;
+    const STATUS_PENDING_RESOLUTION: u8 = 6;
+    const STATUS_PENDING_TERMINATION: u8 = 7;
+
+    // Consent type constants
+    const CONSENT_RESOLUTION: u8 = 0;
+    const CONSENT_DISPUTE: u8 = 1;
+    const CONSENT_TERMINATION: u8 = 2;
+    const CONSENT_MODIFICATION: u8 = 3;
+
+    // Consent expiration time (24 hours in milliseconds)
+    const CONSENT_EXPIRATION_TIME: u64 = 86400000;
+
+    /// Consent state for two-party agreement mechanisms
+    public struct ConsentState has store, drop {
+        borrower_consent: bool,
+        lender_consent: bool,
+        consent_type: u8, // 0: resolution, 1: dispute, 2: termination, 3: modification
+        requested_at: u64,
+        expires_at: u64,
+    }
 
     /// Main loan structure with encrypted details and ZK proof verification
     public struct Loan has key, store {
@@ -47,6 +68,7 @@ module community_lending::loan_manager {
         due_date: u64,
         total_repaid: u64,
         community_id: String,
+        consent_state: Option<ConsentState>, // New field for consent tracking
     }
 
     /// Loan registry to track all loans
@@ -96,6 +118,31 @@ module community_lending::loan_manager {
         total_repaid: u64,
     }
 
+    public struct ConsentRequested has copy, drop {
+        loan_id: address,
+        requester: address,
+        consent_type: u8,
+        expires_at: u64,
+    }
+
+    public struct ConsentGiven has copy, drop {
+        loan_id: address,
+        consenter: address,
+        consent_type: u8,
+        all_parties_consented: bool,
+    }
+
+    public struct ConsentWithdrawn has copy, drop {
+        loan_id: address,
+        withdrawer: address,
+        consent_type: u8,
+    }
+
+    public struct ConsentExpired has copy, drop {
+        loan_id: address,
+        consent_type: u8,
+    }
+
     /// Initialize the loan registry (called once during deployment)
     fun init(ctx: &mut TxContext) {
         let registry = LoanRegistry {
@@ -141,6 +188,7 @@ module community_lending::loan_manager {
             due_date: 0,
             total_repaid: 0,
             community_id,
+            consent_state: option::none(), // Initialize consent state
         };
 
         let loan_address = object::uid_to_address(&loan.id);
@@ -223,7 +271,8 @@ module community_lending::loan_manager {
         // Calculate remaining balance
         let total_due = calculate_total_due(loan);
         let remaining_balance = if (loan.total_repaid >= total_due) {
-            loan.status = STATUS_COMPLETED;
+            // Don't automatically complete - require consent
+            // loan.status = STATUS_COMPLETED;
             0
         } else {
             total_due - loan.total_repaid
@@ -241,12 +290,13 @@ module community_lending::loan_manager {
             remaining_balance,
         });
 
-        if (loan.status == STATUS_COMPLETED) {
-            event::emit(LoanCompleted {
-                loan_id: object::uid_to_address(&loan.id),
-                total_repaid: loan.total_repaid,
-            });
-        }
+        // Note: Loan completion now requires two-party consent via request_loan_resolution
+        // if (loan.status == STATUS_COMPLETED) {
+        //     event::emit(LoanCompleted {
+        //         loan_id: object::uid_to_address(&loan.id),
+        //         total_repaid: loan.total_repaid,
+        //     });
+        // };
     }
 
     /// Mark loan as defaulted (can be called by lender after due date)
@@ -274,6 +324,243 @@ module community_lending::loan_manager {
         assert!(loan.status == STATUS_ACTIVE || loan.status == STATUS_DEFAULTED, E_INVALID_LOAN_STATUS);
         
         loan.status = STATUS_DISPUTED;
+    }
+
+    /// Request loan resolution (requires both parties to agree)
+    public fun request_loan_resolution(
+        loan: &mut Loan,
+        clock: &Clock,
+        ctx: &mut TxContext
+    ) {
+        let sender = tx_context::sender(ctx);
+        assert!(sender == loan.borrower || sender == loan.lender, E_UNAUTHORIZED);
+        assert!(loan.status == STATUS_ACTIVE, E_INVALID_LOAN_STATUS);
+        
+        let current_time = clock::timestamp_ms(clock);
+        let total_due = calculate_total_due(loan);
+        
+        // Only allow resolution if loan is fully paid
+        assert!(loan.total_repaid >= total_due, E_INSUFFICIENT_PAYMENT);
+        
+        // Create consent state
+        let mut consent_state = ConsentState {
+            borrower_consent: false,
+            lender_consent: false,
+            consent_type: CONSENT_RESOLUTION,
+            requested_at: current_time,
+            expires_at: current_time + CONSENT_EXPIRATION_TIME,
+        };
+        
+        // Set initial consent based on who requested
+        if (sender == loan.borrower) {
+            consent_state.borrower_consent = true;
+        } else {
+            consent_state.lender_consent = true;
+        };
+        
+        loan.consent_state = option::some(consent_state);
+        loan.status = STATUS_PENDING_RESOLUTION;
+        
+        // Emit consent requested event
+        event::emit(ConsentRequested {
+            loan_id: object::uid_to_address(&loan.id),
+            requester: sender,
+            consent_type: CONSENT_RESOLUTION,
+            expires_at: current_time + CONSENT_EXPIRATION_TIME,
+        });
+    }
+
+    /// Give consent for loan resolution
+    public fun consent_to_resolution(
+        loan: &mut Loan,
+        clock: &Clock,
+        ctx: &mut TxContext
+    ) {
+        let sender = tx_context::sender(ctx);
+        assert!(sender == loan.borrower || sender == loan.lender, E_UNAUTHORIZED);
+        assert!(loan.status == STATUS_PENDING_RESOLUTION, E_INVALID_LOAN_STATUS);
+        
+        let consent_state = option::borrow_mut(&mut loan.consent_state);
+        let current_time = clock::timestamp_ms(clock);
+        
+        // Check if consent has expired
+        assert!(current_time <= consent_state.expires_at, E_EXPIRED_LOAN);
+        
+        // Update consent based on sender
+        if (sender == loan.borrower) {
+            consent_state.borrower_consent = true;
+        } else {
+            consent_state.lender_consent = true;
+        };
+        
+        // Check if both parties have consented
+        if (consent_state.borrower_consent && consent_state.lender_consent) {
+            loan.status = STATUS_COMPLETED;
+            loan.consent_state = option::none();
+            
+            // Emit completion event
+            event::emit(LoanCompleted {
+                loan_id: object::uid_to_address(&loan.id),
+                total_repaid: loan.total_repaid,
+            });
+        } else {
+            // Emit consent given event
+            event::emit(ConsentGiven {
+                loan_id: object::uid_to_address(&loan.id),
+                consenter: sender,
+                consent_type: CONSENT_RESOLUTION,
+                all_parties_consented: false,
+            });
+        };
+    }
+
+    /// Request early loan termination (requires both parties to agree)
+    public fun request_early_termination(
+        loan: &mut Loan,
+        clock: &Clock,
+        ctx: &mut TxContext
+    ) {
+        let sender = tx_context::sender(ctx);
+        assert!(sender == loan.borrower || sender == loan.lender, E_UNAUTHORIZED);
+        assert!(loan.status == STATUS_ACTIVE, E_INVALID_LOAN_STATUS);
+        
+        let current_time = clock::timestamp_ms(clock);
+        
+        // Create consent state for termination
+        let mut consent_state = ConsentState {
+            borrower_consent: false,
+            lender_consent: false,
+            consent_type: CONSENT_TERMINATION,
+            requested_at: current_time,
+            expires_at: current_time + CONSENT_EXPIRATION_TIME,
+        };
+        
+        // Set initial consent based on who requested
+        if (sender == loan.borrower) {
+            consent_state.borrower_consent = true;
+        } else {
+            consent_state.lender_consent = true;
+        };
+        
+        loan.consent_state = option::some(consent_state);
+        loan.status = STATUS_PENDING_TERMINATION;
+        
+        // Emit consent requested event
+        event::emit(ConsentRequested {
+            loan_id: object::uid_to_address(&loan.id),
+            requester: sender,
+            consent_type: CONSENT_TERMINATION,
+            expires_at: current_time + CONSENT_EXPIRATION_TIME,
+        });
+    }
+
+    /// Give consent for early termination
+    public fun consent_to_termination(
+        loan: &mut Loan,
+        clock: &Clock,
+        ctx: &mut TxContext
+    ) {
+        let sender = tx_context::sender(ctx);
+        assert!(sender == loan.borrower || sender == loan.lender, E_UNAUTHORIZED);
+        assert!(loan.status == STATUS_PENDING_TERMINATION, E_INVALID_LOAN_STATUS);
+        
+        let consent_state = option::borrow_mut(&mut loan.consent_state);
+        let current_time = clock::timestamp_ms(clock);
+        
+        // Check if consent has expired
+        assert!(current_time <= consent_state.expires_at, E_EXPIRED_LOAN);
+        
+        // Update consent based on sender
+        if (sender == loan.borrower) {
+            consent_state.borrower_consent = true;
+        } else {
+            consent_state.lender_consent = true;
+        };
+        
+        // Check if both parties have consented
+        if (consent_state.borrower_consent && consent_state.lender_consent) {
+            loan.status = STATUS_COMPLETED;
+            loan.consent_state = option::none();
+            
+            // Emit completion event
+            event::emit(LoanCompleted {
+                loan_id: object::uid_to_address(&loan.id),
+                total_repaid: loan.total_repaid,
+            });
+        } else {
+            // Emit consent given event
+            event::emit(ConsentGiven {
+                loan_id: object::uid_to_address(&loan.id),
+                consenter: sender,
+                consent_type: CONSENT_TERMINATION,
+                all_parties_consented: false,
+            });
+        };
+    }
+
+    /// Withdraw consent request (can be called by the party who initiated it)
+    public fun withdraw_consent_request(
+        loan: &mut Loan,
+        ctx: &mut TxContext
+    ) {
+        let sender = tx_context::sender(ctx);
+        assert!(sender == loan.borrower || sender == loan.lender, E_UNAUTHORIZED);
+        assert!(loan.status == STATUS_PENDING_RESOLUTION || loan.status == STATUS_PENDING_TERMINATION, E_INVALID_LOAN_STATUS);
+        
+        let consent_state = option::borrow(&loan.consent_state);
+        let consent_type = consent_state.consent_type;
+        
+        // Only the initiator can withdraw (the one who has consent = true)
+        if (sender == loan.borrower && consent_state.borrower_consent) {
+            loan.consent_state = option::none();
+            loan.status = STATUS_ACTIVE;
+            
+            // Emit consent withdrawn event
+            event::emit(ConsentWithdrawn {
+                loan_id: object::uid_to_address(&loan.id),
+                withdrawer: sender,
+                consent_type,
+            });
+        } else if (sender == loan.lender && consent_state.lender_consent) {
+            loan.consent_state = option::none();
+            loan.status = STATUS_ACTIVE;
+            
+            // Emit consent withdrawn event
+            event::emit(ConsentWithdrawn {
+                loan_id: object::uid_to_address(&loan.id),
+                withdrawer: sender,
+                consent_type,
+            });
+        } else {
+            abort E_UNAUTHORIZED
+        };
+    }
+
+    /// Check if consent has expired and reset loan status if needed
+    public fun check_consent_expiration(
+        loan: &mut Loan,
+        clock: &Clock,
+        _ctx: &mut TxContext
+    ) {
+        if (option::is_some(&loan.consent_state)) {
+            let consent_state = option::borrow(&loan.consent_state);
+            let current_time = clock::timestamp_ms(clock);
+            
+            if (current_time > consent_state.expires_at) {
+                // Consent expired, reset to active status
+                let consent_type = consent_state.consent_type;
+                loan.consent_state = option::none();
+                if (loan.status == STATUS_PENDING_RESOLUTION || loan.status == STATUS_PENDING_TERMINATION) {
+                    loan.status = STATUS_ACTIVE;
+                };
+                
+                // Emit consent expired event
+                event::emit(ConsentExpired {
+                    loan_id: object::uid_to_address(&loan.id),
+                    consent_type,
+                });
+            };
+        };
     }
 
     /// Verify ZK proof using the enhanced verifier module
@@ -343,6 +630,57 @@ module community_lending::loan_manager {
     /// Check if sender is loan participant
     public fun is_loan_participant(loan: &Loan, sender: address): bool {
         sender == loan.borrower || sender == loan.lender
+    }
+
+    /// Get consent status information
+    public fun get_consent_status(loan: &Loan): (bool, u8, u64, u64) {
+        if (option::is_some(&loan.consent_state)) {
+            let consent_state = option::borrow(&loan.consent_state);
+            (
+                true, // has_consent_state
+                consent_state.consent_type,
+                consent_state.requested_at,
+                consent_state.expires_at
+            )
+        } else {
+            (false, 0, 0, 0) // no consent state
+        }
+    }
+
+    /// Check if a specific party has given consent
+    public fun has_party_consented(loan: &Loan, party: address): bool {
+        if (option::is_some(&loan.consent_state)) {
+            let consent_state = option::borrow(&loan.consent_state);
+            if (party == loan.borrower) {
+                consent_state.borrower_consent
+            } else if (party == loan.lender) {
+                consent_state.lender_consent
+            } else {
+                false
+            }
+        } else {
+            false
+        }
+    }
+
+    /// Check if both parties have consented
+    public fun have_both_parties_consented(loan: &Loan): bool {
+        if (option::is_some(&loan.consent_state)) {
+            let consent_state = option::borrow(&loan.consent_state);
+            consent_state.borrower_consent && consent_state.lender_consent
+        } else {
+            false
+        }
+    }
+
+    /// Check if consent request has expired
+    public fun is_consent_expired(loan: &Loan, current_time: u64): bool {
+        if (option::is_some(&loan.consent_state)) {
+            let consent_state = option::borrow(&loan.consent_state);
+            current_time > consent_state.expires_at
+        } else {
+            false
+        }
     }
 
     // Test-only functions
