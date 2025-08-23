@@ -1,0 +1,162 @@
+[
+  {
+    "src_id": "P001",
+    "dst_id": "P002",
+    "edgeType": "peer",
+    "associationRate": 642,
+    "eventTime": "2025-08-10T02:46:00Z",
+    "notes": "Auto-generated peer link with strength 642"
+  },
+  {
+    "src_id": "P001",
+    "dst_id": "P003",
+    "edgeType": "collaborator",
+    "associationRate": 674,
+    "eventTime": "2025-08-01T16:05:00Z",
+    "notes": "Auto-generated collaborator link with strength 674"
+  },
+  {
+    "src_id": "P002",
+    "dst_id": "P003",
+    "edgeType": "friend",
+    "associationRate": 334,
+    "eventTime": "2025-06-11T09:20:00Z",
+    "notes": "Auto-generated friend link with strength 334"
+  },
+  {
+    "src_id": "P003",
+    "dst_id": "P004",
+    "edgeType": "collaborator",
+    "associationRate": 706,
+    "eventTime": "2025-07-11T12:38:00Z",
+    "notes": "Auto-generated collaborator link with strength 706"
+  },
+  {
+    "src_id": "P004",
+    "dst_id": "P005",
+    "edgeType": "peer",
+    "associationRate": 415,
+    "eventTime": "2025-06-14T01:01:00Z",
+    "notes": "Auto-generated peer link with strength 415"
+  },
+  {
+    "src_id": "P005",
+    "dst_id": "P001",
+    "edgeType": "collaborator",
+    "associationRate": 633,
+    "eventTime": "2025-08-03T04:20:00Z",
+    "notes": "Auto-generated collaborator link with strength 633"
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P003",
+    "edgeType": "peer",
+    "associationRate": 390,
+    "eventTime": "2025-06-20T18:31:00Z",
+    "notes": "Auto-generated peer link with strength 390"
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P007",
+    "edgeType": "friend",
+    "associationRate": 507,
+    "eventTime": "2025-03-11T01:25:00Z",
+    "notes": "Auto-generated friend link with strength 507"
+  },
+  {
+    "src_id": "P007",
+    "dst_id": "P008",
+    "edgeType": "peer",
+    "associationRate": 422,
+    "eventTime": "2025-05-30T22:46:00Z",
+    "notes": "Auto-generated peer link with strength 422"
+  },
+  {
+    "src_id": "P008",
+    "dst_id": "P009",
+    "edgeType": "collaborator",
+    "associationRate": 699,
+    "eventTime": "2025-06-02T11:43:00Z",
+    "notes": "Auto-generated collaborator link with strength 699"
+  },
+  {
+    "src_id": "P009",
+    "dst_id": "P010",
+    "edgeType": "peer",
+    "associationRate": 299,
+    "eventTime": "2025-03-29T01:40:00Z",
+    "notes": "Auto-generated peer link with strength 299"
+  },
+  {
+    "src_id": "P010",
+    "dst_id": "P006",
+    "edgeType": "collaborator",
+    "associationRate": 417,
+    "eventTime": "2025-04-16T11:04:00Z",
+    "notes": "Auto-generated collaborator link with strength 417"
+  },
+  {
+    "src_id": "P002",
+    "dst_id": "P006",
+    "edgeType": "manager_of",
+    "associationRate": 761,
+    "eventTime": "2025-04-26T19:44:00Z",
+    "notes": "Auto-generated manager_of link with strength 761"
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P002",
+    "edgeType": "reports_to",
+    "associationRate": 367,
+    "eventTime": "2025-03-31T06:44:00Z",
+    "notes": "Auto-generated reports_to link with strength 367"
+  },
+  {
+    "src_id": "P004",
+    "dst_id": "P007",
+    "edgeType": "manager_of",
+    "associationRate": 661,
+    "eventTime": "2025-05-04T05:35:00Z",
+    "notes": "Auto-generated manager_of link with strength 661"
+  },
+  {
+    "src_id": "P007",
+    "dst_id": "P004",
+    "edgeType": "reports_to",
+    "associationRate": 499,
+    "eventTime": "2025-07-17T07:29:00Z",
+    "notes": "Auto-generated reports_to link with strength 499"
+  },
+  {
+    "src_id": "P005",
+    "dst_id": "P008",
+    "edgeType": "collaborator",
+    "associationRate": 325,
+    "eventTime": "2025-08-09T20:51:00Z",
+    "notes": "Auto-generated collaborator link with strength 325"
+  },
+  {
+    "src_id": "P009",
+    "dst_id": "P001",
+    "edgeType": "peer",
+    "associationRate": 610,
+    "eventTime": "2025-02-28T10:22:00Z",
+    "notes": "Auto-generated peer link with strength 610"
+  },
+  {
+    "src_id": "P003",
+    "dst_id": "P009",
+    "edgeType": "peer",
+    "associationRate": 45,
+    "eventTime": "2025-08-05T11:36:00Z",
+    "notes": "Very weak tie"
+  },
+  {
+    "src_id": "P008",
+    "dst_id": "P002",
+    "edgeType": "collaborator",
+    "associationRate": 895,
+    "eventTime": "2025-03-22T09:27:00Z",
+    "notes": "Very strong tie"
+  }
+]
