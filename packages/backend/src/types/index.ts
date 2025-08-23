@@ -290,12 +290,26 @@ export interface APIResponse<T = any> {
   requestId: string;
 }
 
-export interface APIError {
-  code: string;
-  message: string;
-  details?: any;
-  timestamp: Date;
-  requestId: string;
+export class APIError extends Error {
+  public code: string;
+  public details?: any;
+  public timestamp: Date;
+  public requestId: string;
+
+  constructor(params: {
+    code: string;
+    message: string;
+    details?: any;
+    timestamp: Date;
+    requestId: string;
+  }) {
+    super(params.message);
+    this.name = 'APIError';
+    this.code = params.code;
+    this.details = params.details;
+    this.timestamp = params.timestamp;
+    this.requestId = params.requestId;
+  }
 }
 
 // Standardized error codes
@@ -335,4 +349,84 @@ export interface RedisConfig {
   keyPrefix?: string;
   retryDelayOnFailover?: number;
   maxRetriesPerRequest?: number;
+}
+
+// Message processing types
+export enum MessageFormat {
+  IMESSAGE = 'imessage',
+  WHATSAPP = 'whatsapp',
+  EMAIL = 'email',
+  GENERIC = 'generic'
+}
+
+export enum FileUploadStatus {
+  PENDING = 'pending',
+  PROCESSING = 'processing',
+  COMPLETED = 'completed',
+  FAILED = 'failed',
+  EXPIRED = 'expired'
+}
+
+export interface MessageUpload {
+  id: string;
+  userId: string;
+  filename: string;
+  originalFilename: string;
+  fileSize: number;
+  mimeType: string;
+  format: MessageFormat;
+  status: FileUploadStatus;
+  uploadedAt: Date;
+  processedAt?: Date;
+  expiresAt: Date;
+  errorMessage?: string;
+  messageCount?: number;
+  processingProgress: number; // 0-100
+  encryptedFilePath?: string;
+  sanitizedMessageHash?: string;
+}
+
+export interface ParsedMessage {
+  id: string;
+  timestamp: Date;
+  sender: string;
+  content: string;
+  messageType: 'text' | 'media' | 'system';
+  metadata?: Record<string, any>;
+}
+
+export interface MessageParsingResult {
+  messages: ParsedMessage[];
+  totalCount: number;
+  format: MessageFormat;
+  dateRange: {
+    start: Date;
+    end: Date;
+  };
+  participants: string[];
+  sanitizationReport: {
+    piiRemoved: number;
+    phoneNumbersRemoved: number;
+    emailsRemoved: number;
+    addressesRemoved: number;
+    namesRedacted: number;
+  };
+}
+
+export interface FileValidationResult {
+  isValid: boolean;
+  errors: string[];
+  warnings: string[];
+  detectedFormat?: MessageFormat;
+  estimatedMessageCount?: number;
+}
+
+export interface UploadProgress {
+  uploadId: string;
+  status: FileUploadStatus;
+  progress: number;
+  currentStep: string;
+  estimatedTimeRemaining?: number;
+  errorMessage?: string;
+  result?: MessageParsingResult;
 }

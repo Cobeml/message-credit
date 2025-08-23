@@ -11,10 +11,14 @@ describe('AuthService', () => {
 
   beforeAll(async () => {
     // Use test database
+    const testDatabaseUrl = process.env.DATABASE_URL_TEST || 
+                           process.env.DATABASE_URL || 
+                           'file:./test.db';
+    
     prisma = new PrismaClient({
       datasources: {
         db: {
-          url: process.env.DATABASE_URL_TEST || process.env.DATABASE_URL
+          url: testDatabaseUrl
         }
       }
     });

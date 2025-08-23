@@ -362,9 +362,20 @@ function createDemographicData(analyses: AIAnalysis[]): Map<string, DemographicD
   
   analyses.forEach(analysis => {
     // Extract gender from the group prefix in the userId
-    const gender = analysis.userId.includes('male') ? 'M' : 
-                   analysis.userId.includes('female') ? 'F' : 
-                   analysis.userId.includes('M') ? 'M' : 'F';
+    let gender = 'M'; // default
+    if (analysis.userId.includes('male') && !analysis.userId.includes('female')) {
+      gender = 'M';
+    } else if (analysis.userId.includes('female')) {
+      gender = 'F';
+    } else if (analysis.userId.includes('-m-') || analysis.userId.includes('user-m-')) {
+      gender = 'M';
+    } else if (analysis.userId.includes('-f-') || analysis.userId.includes('user-f-')) {
+      gender = 'F';
+    } else if (analysis.userId.includes('group1')) {
+      gender = 'M';
+    } else if (analysis.userId.includes('group2')) {
+      gender = 'F';
+    }
     
     const age = analysis.userId.includes('young') ? 25 : 
                 analysis.userId.includes('older') ? 55 : 30;

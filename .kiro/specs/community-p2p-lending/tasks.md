@@ -66,20 +66,37 @@
   - Optimize circuits for mobile device performance
   - _Requirements: 3.6, 3.7, 3.8, 3.9_
 
-- [-] 6. Build Sui blockchain integration
-- [-] 6.1 Develop Sui smart contracts
+- [x] 6. Build Sui blockchain integration
+- [x] 6.1 Develop Sui smart contracts
   - Create Move contracts for loan management with encrypted details
   - Implement ZK proof verification in smart contracts
   - Build privacy-preserving payment and status update functions
   - Create comprehensive contract tests and security validations
   - _Requirements: 4.1, 4.2, 4.4, 3.5_
 
-- [ ] 6.2 Implement blockchain service layer
+- [x] 6.2 Implement blockchain service layer
   - Create Node.js service for Sui blockchain interactions
   - Build transaction signing and submission utilities
   - Implement event listening for contract state changes
   - Create retry mechanisms and error handling for blockchain operations
   - _Requirements: 4.1, 4.2, 4.3, 4.5_
+
+- [x] 6.3 Fix critical service and test issues
+  - Fix bias detection algorithm to properly detect demographic parity violations
+  - Resolve AI trustworthiness service Anthropic SDK integration issues
+  - Fix database connection configuration for integration tests
+  - Improve test infrastructure and mocking setup for reliable CI/CD
+  - _Requirements: 2.3, 2.4, 2.5, 3.11_
+
+- [x] 6.4 Implement message file upload and processing system
+  - Create secure file upload endpoint with support for multiple file formats (JSON, CSV, TXT)
+  - Implement message format parsers for iMessage, WhatsApp, and email exports
+  - Build encrypted message processing pipeline with zero-knowledge privacy
+  - Create message validation and sanitization to remove PII before AI analysis
+  - Implement file size limits, virus scanning, and security validation
+  - Build temporary file storage with automatic cleanup after processing
+  - Create API endpoints for upload status tracking and progress monitoring
+  - _Requirements: 2.1, 2.9, 6.1, 6.2_
 
 - [ ] 7. Develop loan management system
 - [ ] 7.1 Create loan request and approval workflow
@@ -177,7 +194,40 @@
   - Implement backup and disaster recovery procedures
   - _Requirements: 8.4, 10.3_
 
-- [ ] 14. Integration testing and system validation
+- [x] 14. Create realistic test message data for MVP validation
+- [x] 14.1 Create reliable user message dataset
+  - Generate realistic WhatsApp/iMessage conversation history for a conscientious, reliable user
+  - Include patterns showing fulfilled promises, timely responses, and responsible behavior
+  - Add conversations about financial commitments, loan repayments, and trustworthy actions
+  - Create 100+ messages spanning 6 months with consistent reliable behavior patterns
+  - _Requirements: 2.1, 2.4, 2.10_
+
+- [x] 14.2 Create unreliable user message dataset  
+  - Generate realistic message history for an erratic, neurotic, unreliable user
+  - Include patterns showing broken promises, inconsistent behavior, and financial irresponsibility
+  - Add conversations about missed payments, excuses, and unreliable commitments
+  - Create 100+ messages spanning 6 months with consistent unreliable behavior patterns
+  - _Requirements: 2.1, 2.4, 2.10_
+
+- [ ] 15. Enhance AI evaluation pipeline for comprehensive credit scoring
+- [ ] 15.1 Expand AI analysis output format
+  - Modify Claude integration to output structured creditworthiness indicators
+  - Add specific analysis of promises, commitments, and follow-through patterns
+  - Include financial responsibility indicators from message content
+  - Generate separate trustworthiness score based on behavioral patterns
+  - Create overall credit score combining personality traits and behavioral indicators
+  - Add comprehensive user overview and risk assessment summary
+  - _Requirements: 2.1, 2.4, 2.9, 2.10_
+
+- [ ] 15.2 Create end-to-end testing pipeline
+  - Build test script that uploads sample message files through the complete pipeline
+  - Validate message processing, AI analysis, and score generation
+  - Create assertions for expected score ranges for reliable vs unreliable users
+  - Implement no-fallback validation to ensure Claude API is working correctly
+  - Generate detailed test reports showing all analysis components
+  - _Requirements: 2.1, 2.4, 2.9, 2.10_
+
+- [ ] 16. Integration testing and system validation
   - Perform end-to-end integration testing across all services
   - Validate ZK proof integration with Sui smart contracts
   - Test AI bias detection and mitigation in production scenarios

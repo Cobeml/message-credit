@@ -3,6 +3,7 @@
 import { PrismaClient } from '@prisma/client';
 import { initializeDatabase, cleanupDatabase } from './database/init.js';
 import { createApp } from './app.js';
+import { CleanupService } from './services/cleanup.js';
 import winston from 'winston';
 
 // Configure logger
@@ -31,6 +32,11 @@ async function startServer() {
     // Create Express application
     const app = createApp(prisma);
     
+    // Initialize cleanup service
+    const cleanupService = new CleanupService(prisma);
+    cleanupService.start();
+    logger.info('Cleanup service started');
+    
     // Start server
     const port = process.env.PORT || 3001;
     const server = app.listen(port, () => {
@@ -46,6 +52,8 @@ async function startServer() {
       
       server.close(async () => {
         logger.info('HTTP server closed');
+        cleanupService.stop();
+        logger.info('Cleanup service stopped');
         await cleanupDatabase();
         logger.info('Database connections closed');
         process.exit(0);

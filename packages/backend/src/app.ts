@@ -6,6 +6,8 @@ import helmet from 'helmet';
 import { PrismaClient } from '@prisma/client';
 import { createAuthRoutes } from './routes/auth.js';
 import { createUserRoutes } from './routes/user.js';
+import { createBlockchainRoutes } from './routes/blockchain.js';
+import { createMessageUploadRoutes } from './routes/message-upload.js';
 import { requestIdMiddleware, securityHeadersMiddleware } from './middleware/auth.js';
 import { APIError, ErrorCodes } from './types/index.js';
 import winston from 'winston';
@@ -79,6 +81,8 @@ export function createApp(prisma: PrismaClient): express.Application {
   // API routes
   app.use('/api/auth', createAuthRoutes(prisma));
   app.use('/api/users', createUserRoutes(prisma));
+  app.use('/api/blockchain', createBlockchainRoutes(prisma));
+  app.use('/api/message-upload', createMessageUploadRoutes(prisma));
 
   // Health check endpoint
   app.get('/health', (req, res) => {

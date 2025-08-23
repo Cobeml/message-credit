@@ -1,0 +1,737 @@
+[
+  {
+    "timestamp": "2024-02-15T09:15:00Z",
+    "sender": "Alex",
+    "content": "Hey Sarah, just wanted to confirm I'll have the rent payment ready by the 1st as always. Already set aside the money in my savings account.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-15T09:17:00Z",
+    "sender": "Sarah",
+    "content": "Thanks Alex! You're always so reliable with payments. Really appreciate it.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-16T14:30:00Z",
+    "sender": "Alex",
+    "content": "Mom, I transferred the $200 for your prescription today. Should show up in your account by tomorrow morning. Let me know if you need anything else.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-16T14:45:00Z",
+    "sender": "Mom",
+    "content": "Thank you sweetheart. You're so thoughtful and responsible. I'm proud of you.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-18T11:20:00Z",
+    "sender": "Alex",
+    "content": "Mike, I know I promised to help you move this weekend. I've already rented the truck for Saturday morning. What time should I pick you up?",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-15T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-17T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-19T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-21T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-23T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-25T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "David, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-27T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Rachel, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-02-29T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Kevin, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-02T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Anna, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-04T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Paul, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-06T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jenny, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-08T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Steve, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-10T05:00:00.000Z",
+    "sender": "Alex",
+    "content": "Carol, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-12T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Dan, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-14T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Michelle, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-16T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Maria, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-18T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jake, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-20T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mark, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-22T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Robert, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-24T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-26T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-28T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-03-30T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-01T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-03T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "David, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-05T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Rachel, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-07T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Kevin, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-09T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Anna, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-11T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Paul, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-13T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jenny, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-15T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Steve, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-17T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Carol, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-19T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Dan, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-21T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Michelle, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-23T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Maria, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-25T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jake, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-27T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mark, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-04-29T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Robert, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-01T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-03T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-05T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-07T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-09T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-11T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "David, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-13T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Rachel, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-15T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Kevin, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-17T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Anna, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-19T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Paul, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-21T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jenny, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-23T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Steve, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-25T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Carol, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-27T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Dan, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-29T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Michelle, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-05-31T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Maria, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-02T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jake, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-04T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mark, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-06T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Robert, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-08T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-10T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-12T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-14T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-16T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-18T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "David, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-20T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Rachel, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-22T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Kevin, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-24T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Anna, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-26T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Paul, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-28T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jenny, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-06-30T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Steve, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-02T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Carol, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-04T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Dan, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-06T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Michelle, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-08T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Maria, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-10T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jake, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-12T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mark, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-14T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Robert, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-16T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-18T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-20T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-22T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-24T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-26T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "David, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-28T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Rachel, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-07-30T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Kevin, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-01T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Anna, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-03T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Paul, I appointment confirmed and will be there early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-05T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jenny, I borrowed item returned in better condition. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-07T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Steve, I financial goals exceeded this month. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-09T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Carol, I credit score improved due to consistent payments. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-11T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Dan, I savings target reached through discipline. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-13T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Michelle, I rent payment submitted on time. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-15T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Maria, I credit card paid in full early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-17T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Jake, I promised to help and following through. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-19T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mark, I budget review completed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-21T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Robert, I emergency fund growing steadily. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-23T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Tom, I investment contributions made on schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-25T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Lisa, I loan payment processed successfully. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-27T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Mike, I insurance renewed with better rates. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-29T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Sarah, I tax documents organized early. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  },
+  {
+    "timestamp": "2024-08-31T04:00:00.000Z",
+    "sender": "Alex",
+    "content": "Emma, I project delivered ahead of schedule. Consistency and reliability are important to me. Always keeping my commitments.",
+    "messageType": "text",
+    "platform": "imessage"
+  }
+]

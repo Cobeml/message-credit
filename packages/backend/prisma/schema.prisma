@@ -36,6 +36,7 @@ model User {
   receivedTrust         TrustConnection[] @relation("TrustTo")
   endorsements          Endorsement[] @relation("EndorsementFrom")
   receivedEndorsements  Endorsement[] @relation("EndorsementTo")
+  messageUploads        MessageUpload[]
 
   @@map("users")
 }
@@ -311,6 +312,31 @@ model Endorsement {
   toUser                User     @relation("EndorsementTo", fields: [toUserId], references: [id])
 
   @@map("endorsements")
+}
+
+// Message file upload and processing tracking
+model MessageUpload {
+  id                    String   @id @default(cuid())
+  userId                String
+  filename              String
+  originalFilename      String
+  fileSize              Int
+  mimeType              String
+  format                String // imessage, whatsapp, email, generic
+  status                String   @default("pending") // pending, processing, completed, failed, expired
+  uploadedAt            DateTime @default(now())
+  processedAt           DateTime?
+  expiresAt             DateTime
+  errorMessage          String?
+  messageCount          Int?
+  processingProgress    Int      @default(0) // 0-100
+  encryptedFilePath     String?
+  sanitizedMessageHash  String?
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("message_uploads")
 }
 
 // Audit trail for compliance and transparency

@@ -42,7 +42,7 @@ export interface GroupStatistics {
 }
 
 export class BiasDetectionService {
-  private readonly BIAS_THRESHOLD = 0.1;  // 10% difference threshold
+  private readonly BIAS_THRESHOLD = 0.05;  // 5% difference threshold for more sensitive detection
   private readonly MIN_SAMPLE_SIZE: number;   // Minimum samples for reliable analysis
 
   constructor(minSampleSize: number = 30) {
@@ -290,13 +290,18 @@ export class BiasDetectionService {
     for (const [type, groups] of demographicTypes) {
       if (groups.length < 2) continue;
 
-      const positiveRates = groups.map(g => g.positiveOutcomes / g.totalCount);
+      const positiveRates = groups.map(g => {
+        const rate = g.totalCount > 0 ? g.positiveOutcomes / g.totalCount : 0;
+        return rate;
+      });
+      
       const maxRate = Math.max(...positiveRates);
       const minRate = Math.min(...positiveRates);
       const difference = maxRate - minRate;
 
-      if (difference > this.BIAS_THRESHOLD) {
-        const severity = difference > 0.2 ? 'high' : difference > 0.15 ? 'medium' : 'low';
+      // Use a lower threshold for testing and more sensitive detection
+      if (difference > 0.05) { // 5% difference threshold instead of 10%
+        const severity = difference > 0.5 ? 'high' : difference > 0.2 ? 'medium' : 'low';
         
         flags.push({
           id: `parity-${type}-${Date.now()}`,

@@ -6,7 +6,7 @@ import { BigFiveTraits } from '../types/index.js';
 const mockCreate = vi.fn();
 vi.mock('@anthropic-ai/sdk', () => {
   return {
-    default: vi.fn().mockImplementation(() => ({
+    Client: vi.fn().mockImplementation(() => ({
       messages: {
         create: mockCreate
       }
