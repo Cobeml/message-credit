@@ -1,730 +1,142 @@
 [
   {
-    "timestamp": "2024-02-15T10:30:00Z",
-    "sender": "Jordan",
-    "content": "Oh crap, I totally forgot about the rent payment again. I'll try to get it to you by the 5th maybe? Money's been really tight lately.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 1,
+    "userId": "jordan_unreliable_001",
+    "content": "Ugh rent is due tomorrow and I totally forgot again. Why is it always at the worst time when I'm already stressed?",
+    "timestamp": "2024-01-15T22:45:00Z",
+    "messageType": "financial_stress"
   },
   {
-    "timestamp": "2024-02-15T10:45:00Z",
-    "sender": "Landlord",
-    "content": "Jordan, this is the third month in a row you've been late. We need to discuss this pattern.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 2,
+    "userId": "jordan_unreliable_001",
+    "content": "Can't sleep, keep worrying about money. Maybe I shouldn't have bought those concert tickets but YOLO right?",
+    "timestamp": "2024-01-16T02:30:00Z",
+    "messageType": "financial_anxiety"
   },
   {
-    "timestamp": "2024-02-16T15:20:00Z",
-    "sender": "Jordan",
-    "content": "Mom, I know I promised to pay you back last week but something came up. Can you wait another month? I'm really stressed about money right now.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 3,
+    "userId": "jordan_unreliable_001",
+    "content": "Overdraft fee AGAIN. This is so unfair, how was I supposed to know that charge would go through today?",
+    "timestamp": "2024-01-17T14:15:00Z",
+    "messageType": "financial_surprise"
   },
   {
-    "timestamp": "2024-02-18T09:15:00Z",
-    "sender": "Jordan",
-    "content": "Mike, I can't help you move this weekend after all. I know I said I would but I'm just not feeling up to it. Sorry man.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 4,
+    "userId": "jordan_unreliable_001",
+    "content": "Credit card bill is higher than I thought... I'll just pay the minimum this month and figure it out later.",
+    "timestamp": "2024-01-18T19:22:00Z",
+    "messageType": "debt_avoidance"
   },
   {
-    "timestamp": "2024-02-18T09:20:00Z",
-    "sender": "Mike",
-    "content": "Seriously Jordan? I already rented the truck based on your promise. This is really frustrating.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 5,
+    "userId": "jordan_unreliable_001",
+    "content": "Saw this amazing jacket on sale for $200. I know I shouldn't but it's 50% off! That's basically saving money right?",
+    "timestamp": "2024-01-19T16:33:00Z",
+    "messageType": "impulse_purchase"
   },
   {
-    "timestamp": "2024-02-20T23:45:00Z",
-    "sender": "Jordan",
-    "content": "Ugh, I just realized my taxes are due soon and I haven't even started organizing my documents. I'm so overwhelmed I don't know where to begin.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 6,
+    "userId": "jordan_unreliable_001",
+    "content": "Mom called asking when I'll pay her back the $500. I feel terrible but things are just really tight right now.",
+    "timestamp": "2024-01-20T11:47:00Z",
+    "messageType": "debt_guilt"
   },
   {
-    "timestamp": "2024-02-22T11:30:00Z",
-    "sender": "Jordan",
-    "content": "Boss, I know the report was due today but I'm having some personal issues. Can I get an extension? I promise I'll have it done by Friday.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 7,
+    "userId": "jordan_unreliable_001",
+    "content": "Stress eating again. Ordered $40 worth of takeout because cooking felt overwhelming today. Bad week financially.",
+    "timestamp": "2024-01-21T20:18:00Z",
+    "messageType": "emotional_spending"
   },
   {
-    "timestamp": "2024-02-22T11:45:00Z",
-    "sender": "Boss",
-    "content": "Jordan, this is becoming a pattern. We need to have a serious conversation about reliability.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 8,
+    "userId": "jordan_unreliable_001",
+    "content": "Late fee on my phone bill because I kept forgetting to pay it. Why is everything so complicated and expensive?",
+    "timestamp": "2024-01-22T13:55:00Z",
+    "messageType": "organization_failure"
   },
   {
-    "timestamp": "2024-02-25T18:15:00Z",
-    "sender": "Jordan",
-    "content": "Lisa, I might be a bit late for dinner tomorrow. Actually, can we reschedule? I'm just feeling really anxious about everything lately.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 9,
+    "userId": "jordan_unreliable_001",
+    "content": "Emergency car repair: $800! Where am I supposed to get that money? This always happens at the worst times.",
+    "timestamp": "2024-01-23T15:41:00Z",
+    "messageType": "financial_crisis"
   },
   {
-    "timestamp": "2024-02-28T14:20:00Z",
-    "sender": "Jordan",
-    "content": "The bank called about my loan payment being overdue AGAIN. I keep forgetting to set up automatic payments. This is so stressful.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 10,
+    "userId": "jordan_unreliable_001",
+    "content": "Had to use my credit card for the car repair. I hate adding more debt but what choice did I have?",
+    "timestamp": "2024-01-24T10:27:00Z",
+    "messageType": "forced_borrowing"
   },
   {
-    "timestamp": "2024-03-01T16:45:00Z",
-    "sender": "Jordan",
-    "content": "Rent is going to be late again this month. I had to pay for car repairs and now I'm short. Can you give me until the 10th?",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 11,
+    "userId": "jordan_unreliable_001",
+    "content": "Credit card declined at grocery store. So humiliating! I thought I had more room on that card.",
+    "timestamp": "2024-01-25T17:12:00Z",
+    "messageType": "financial_embarrassment"
   },
   {
-    "timestamp": "2024-03-03T12:30:00Z",
-    "sender": "Jordan",
-    "content": "Emma, I know I promised to review your resume but I've been so scattered lately. Can you find someone else? I don't think I'm in the right headspace.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 12,
+    "userId": "jordan_unreliable_001",
+    "content": "Can't stop thinking about all my debt. It keeps me up at night. How did I let it get this bad?",
+    "timestamp": "2024-01-26T01:33:00Z",
+    "messageType": "debt_overwhelm"
   },
   {
-    "timestamp": "2024-03-05T19:00:00Z",
-    "sender": "Jordan",
-    "content": "Credit card payment is overdue and they're charging me late fees. I hate dealing with this stuff. Why is money so complicated?",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 13,
+    "userId": "jordan_unreliable_001",
+    "content": "Another overdraft fee because I forgot about that automatic payment. Banking fees are eating me alive.",
+    "timestamp": "2024-01-27T12:48:00Z",
+    "messageType": "fee_frustration"
   },
   {
-    "timestamp": "2024-03-08T10:15:00Z",
-    "sender": "Jordan",
-    "content": "Tom, about that $500 I borrowed... I'm really struggling right now. Can we work out a payment plan or something? I feel terrible about this.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 14,
+    "userId": "jordan_unreliable_001",
+    "content": "Emotional shopping spree after bad day at work. Spent $300 I don't have on clothes that probably don't even fit.",
+    "timestamp": "2024-01-28T18:25:00Z",
+    "messageType": "retail_therapy"
   },
   {
-    "timestamp": "2024-03-08T10:30:00Z",
-    "sender": "Tom",
-    "content": "Jordan, you promised to pay me back last month. I'm starting to regret lending you money.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 15,
+    "userId": "jordan_unreliable_001",
+    "content": "Panic attack at the ATM when I checked my balance. $47 until payday and it's only Wednesday.",
+    "timestamp": "2024-01-29T14:37:00Z",
+    "messageType": "financial_panic"
   },
   {
-    "timestamp": "2024-03-10T21:30:00Z",
-    "sender": "Jordan",
-    "content": "I tried to do my budget tonight but got overwhelmed and gave up. Numbers make me anxious and I just can't focus on financial planning.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 16,
+    "userId": "jordan_unreliable_001",
+    "content": "Applied for another credit card. I know it's not smart but I need some breathing room with all these bills.",
+    "timestamp": "2024-01-30T16:22:00Z",
+    "messageType": "debt_spiral"
   },
   {
-    "timestamp": "2024-03-12T08:45:00Z",
-    "sender": "Jordan",
-    "content": "Missed my dentist appointment yesterday. I completely forgot and now they're charging me a no-show fee. This always happens to me.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 17,
+    "userId": "jordan_unreliable_001",
+    "content": "Bought lunch every day this week because I was too overwhelmed to meal prep. $60 I didn't budget for.",
+    "timestamp": "2024-01-31T13:44:00Z",
+    "messageType": "planning_failure"
   },
   {
-    "timestamp": "2024-03-15T23:59:00Z",
-    "sender": "Jordan",
-    "content": "Project is due tomorrow and I'm nowhere near finished. I keep procrastinating when I get stressed. Probably going to ask for another extension.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 18,
+    "userId": "jordan_unreliable_001",
+    "content": "Tax deadline approaching and I haven't even started gathering documents. This anxiety is killing me.",
+    "timestamp": "2024-02-01T21:16:00Z",
+    "messageType": "procrastination_stress"
   },
   {
-    "timestamp": "2024-03-18T13:20:00Z",
-    "sender": "Jordan",
-    "content": "Car insurance lapsed because I forgot to pay it. Now I have to pay a reinstatement fee and higher rates. I'm so bad at keeping track of this stuff.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 19,
+    "userId": "jordan_unreliable_001",
+    "content": "Saw everyone posting vacation photos and booked a trip I can't afford. I deserve some happiness, right?",
+    "timestamp": "2024-02-02T19:53:00Z",
+    "messageType": "emotional_decision"
   },
   {
-    "timestamp": "2024-03-20T14:45:00Z",
-    "sender": "Jordan",
-    "content": "Jake, I can't help with your presentation after all. I'm having a really bad anxiety day and can barely function. Sorry for the short notice.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-03-22T17:30:00Z",
-    "sender": "Jordan",
-    "content": "Utility company sent a disconnect notice. I thought I paid that bill but apparently I didn't. Everything feels like it's falling apart.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-03-25T11:15:00Z",
-    "sender": "Jordan",
-    "content": "Performance review was rough. My manager said I need to work on reliability and meeting deadlines. I know they're right but I don't know how to change.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-03-28T20:45:00Z",
-    "sender": "Jordan",
-    "content": "Student loan payment bounced because I miscalculated my account balance. Now there are overdraft fees on top of late fees. I'm drowning in fees.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-01T15:30:00Z",
-    "sender": "Jordan",
-    "content": "April rent is going to be late again. I know this is getting old but I had unexpected expenses. Can you work with me one more time?",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-03T09:00:00Z",
-    "sender": "Jordan",
-    "content": "Maria, I can't drive you to the airport Thursday. I know I promised but my car is making weird noises and I'm afraid it might break down.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-05T22:15:00Z",
-    "sender": "Jordan",
-    "content": "I keep trying to save money but something always comes up. Emergency fund? What's that? I can barely cover my basic expenses.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-08T12:45:00Z",
-    "sender": "Jordan",
-    "content": "Tax deadline is tomorrow and I still haven't filed. I'm panicking. Might have to file an extension because I'm too overwhelmed to finish.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-10T16:20:00Z",
-    "sender": "Jordan",
-    "content": "Kevin, I damaged your lawn mower and I'm too embarrassed to tell you. The blade hit something and now it won't start. I feel terrible.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-12T18:30:00Z",
-    "sender": "Jordan",
-    "content": "Credit score dropped to 580. Late payments and high utilization are killing me. I don't know how to dig out of this hole.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-15T10:00:00Z",
-    "sender": "Jordan",
-    "content": "Investment account? Retirement planning? I can barely afford groceries. Long-term planning feels impossible when you're living paycheck to paycheck.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-18T07:45:00Z",
-    "sender": "Jordan",
-    "content": "Rachel, I'm going to be late for coffee again. I overslept and I'm having one of those mornings where everything goes wrong.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-20T19:15:00Z",
-    "sender": "Jordan",
-    "content": "Car broke down and I can't afford the repairs right now. Skipped the last two oil changes because money was tight. Now it's going to cost way more.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-22T14:30:00Z",
-    "sender": "Jordan",
-    "content": "Insurance claim got denied because I didn't have all the right paperwork. I'm terrible at keeping organized records. This is a disaster.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-25T11:45:00Z",
-    "sender": "Jordan",
-    "content": "Was supposed to volunteer at the food bank today but I'm having a panic attack about my finances. Can't deal with anything else right now.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-04-28T23:30:00Z",
-    "sender": "Jordan",
-    "content": "Tried to do my monthly budget but it just made me more anxious. I'm spending more than I make and I don't know how to fix it.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-01T17:00:00Z",
-    "sender": "Jordan",
-    "content": "May rent is going to be late AGAIN. I know you're probably fed up with me but I'm doing my best. Money is just so stressful.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-03T08:30:00Z",
-    "sender": "Jordan",
-    "content": "David, I can't help you with interview prep after all. I'm too stressed about my own job situation to be helpful to anyone else right now.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-05T21:45:00Z",
-    "sender": "Jordan",
-    "content": "Credit card is maxed out and I can only make minimum payments. The interest is killing me but I don't have any other options.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-08T13:15:00Z",
-    "sender": "Jordan",
-    "content": "Skipped my health checkup because I can't afford the copay right now. I know it's important but I have to prioritize immediate needs.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-10T16:30:00Z",
-    "sender": "Jordan",
-    "content": "Lisa, I still can't pay back that $300. I know I said this month but everything is falling apart financially. I'm so embarrassed.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-10T16:45:00Z",
-    "sender": "Lisa",
-    "content": "Jordan, I'm really disappointed. You've broken your promise three times now. I can't keep lending you money.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-12T20:00:00Z",
-    "sender": "Jordan",
-    "content": "Home insurance lapsed too. I forgot to renew it and now I have to start over with higher rates. I'm such a mess with this stuff.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-15T12:30:00Z",
-    "sender": "Jordan",
-    "content": "Project was late again and had several errors. My team lead said if this continues, we'll need to discuss my future here. I'm panicking.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-18T09:45:00Z",
-    "sender": "Jordan",
-    "content": "Mark, I never got around to reviewing your business plan. I kept meaning to but I'm so overwhelmed with my own problems. Sorry.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-20T22:15:00Z",
-    "sender": "Jordan",
-    "content": "Student loan is in default now. I missed too many payments and they won't work with me anymore. My credit is completely ruined.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-22T14:45:00Z",
-    "sender": "Jordan",
-    "content": "Investment contributions? I had to cash out my 401k just to pay rent. There goes my retirement savings and I got hit with penalties too.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-25T11:00:00Z",
-    "sender": "Jordan",
-    "content": "Couldn't help my neighbor with their fence. I promised but then I got overwhelmed and avoided them for a week. Now they're not speaking to me.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-05-28T18:30:00Z",
-    "sender": "Jordan",
-    "content": "Memorial Day plans fell through because I couldn't afford my share. Had to cancel last minute and now everyone's mad at me. I feel terrible.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-01T19:45:00Z",
-    "sender": "Jordan",
-    "content": "June rent is going to be late again. I know you're probably going to evict me but I literally don't have the money. I'm falling apart.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-03T10:15:00Z",
-    "sender": "Jordan",
-    "content": "Anna, I can't help you move after all. I know I promised but I'm having a mental health crisis and can barely take care of myself.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-05T23:00:00Z",
-    "sender": "Jordan",
-    "content": "Mid-year financial review? More like mid-year financial disaster. I'm behind on everything and drowning in debt. I don't know what to do.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-08T15:30:00Z",
-    "sender": "Jordan",
-    "content": "Car got repossessed because I missed too many payments. Now I can't get to work reliably. Everything is spiraling out of control.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-10T21:15:00Z",
-    "sender": "Jordan",
-    "content": "Credit score is now 520. I'm basically financially toxic. No one will lend to me and I can't even get approved for basic services.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-12T12:45:00Z",
-    "sender": "Jordan",
-    "content": "Paul, I lost your power drill. I know I borrowed it but with everything going on, I can't remember where I put it. I'll try to replace it somehow.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-15T08:00:00Z",
-    "sender": "Jordan",
-    "content": "Forgot about Father's Day until yesterday. Couldn't afford a gift anyway. I'm such a disappointment to my family.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-18T20:30:00Z",
-    "sender": "Jordan",
-    "content": "Taxes are a mess and I owe money I don't have. I kept terrible records and now I'm facing penalties and interest. I'm overwhelmed.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-20T11:30:00Z",
-    "sender": "Jordan",
-    "content": "Jenny, I have to cancel lunch on Friday. I can't afford to eat out and I'm too embarrassed to explain my situation. Rain check?",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-22T16:45:00Z",
-    "sender": "Jordan",
-    "content": "Home maintenance? I can't even afford basic repairs. The place is falling apart but I have no money for upkeep. Landlord is furious.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-25T22:00:00Z",
-    "sender": "Jordan",
-    "content": "Vacation fund? I had to use that money for rent three months ago. I can't save anything when I'm constantly behind on bills.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-06-28T13:15:00Z",
-    "sender": "Jordan",
-    "content": "Monthly budget review shows I'm spending 150% of my income. I'm going deeper into debt every month and I don't see a way out.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-01T18:30:00Z",
-    "sender": "Jordan",
-    "content": "July rent... I don't even know what to say anymore. I'm three weeks behind and facing eviction. I've failed at everything.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-03T09:15:00Z",
-    "sender": "Jordan",
-    "content": "Steve, I never got around to helping with your resume. I keep meaning to but I'm so scattered and anxious I can't focus on anything.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-05T21:45:00Z",
-    "sender": "Jordan",
-    "content": "All my insurance policies have lapsed. I can't afford the premiums and now I'm unprotected against everything. One accident will ruin me completely.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-08T14:00:00Z",
-    "sender": "Jordan",
-    "content": "Investment portfolio? I liquidated everything months ago just to survive. Lost thousands in penalties and taxes. My future is gone.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-10T19:30:00Z",
-    "sender": "Jordan",
-    "content": "Credit cards are all maxed out and I can't even make minimum payments. Collection agencies are calling constantly. I'm hiding from my phone.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-12T10:45:00Z",
-    "sender": "Jordan",
-    "content": "Carol, I can't pay back that $150. I know I promised but I'm literally broke. I understand if you never want to see me again.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-12T11:00:00Z",
-    "sender": "Carol",
-    "content": "Jordan, I'm really hurt. You've broken every promise you've made to me. I can't trust you anymore.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-15T16:15:00Z",
-    "sender": "Jordan",
-    "content": "Performance review was a disaster. I'm on a performance improvement plan and might lose my job. My reliability issues have caught up with me.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-18T23:30:00Z",
-    "sender": "Jordan",
-    "content": "Student loans are in default, credit cards are maxed, and I'm facing eviction. I've destroyed my financial life through poor decisions and procrastination.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-20T08:45:00Z",
-    "sender": "Jordan",
-    "content": "Dan, I can't help with your presentation. I'm too overwhelmed with my own problems to be useful to anyone. I'm sorry I keep letting people down.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-22T20:00:00Z",
-    "sender": "Jordan",
-    "content": "Emergency fund? I've been in emergency mode for months. Every day is a financial crisis and I have no safety net left.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-25T12:30:00Z",
-    "sender": "Jordan",
-    "content": "Utilities are getting shut off because I can't pay the bills. I've been juggling payments but I'm running out of options. This is rock bottom.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-07-28T17:45:00Z",
-    "sender": "Jordan",
-    "content": "Retirement planning? I'm 30 and have negative net worth. I'll probably have to work until I die because I've made such terrible financial decisions.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-01T21:15:00Z",
-    "sender": "Jordan",
-    "content": "Got evicted. I'm couch surfing now because I couldn't keep up with rent. Ten months of broken promises finally caught up with me.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-03T11:00:00Z",
-    "sender": "Jordan",
-    "content": "Michelle, I can't help you with your finances because I've completely destroyed my own. I'm the last person who should give financial advice.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-05T19:30:00Z",
-    "sender": "Jordan",
-    "content": "Credit score hit 480. I'm financially radioactive. Can't get approved for anything and my past mistakes follow me everywhere.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-08T14:15:00Z",
-    "sender": "Jordan",
-    "content": "Car maintenance? My car was repossessed months ago. I'm taking the bus when I can afford it and walking when I can't.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-10T22:45:00Z",
-    "sender": "Jordan",
-    "content": "Student loans will never be paid off. They're in default and growing with interest and penalties. I'll die owing money I can never repay.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-12T09:30:00Z",
-    "sender": "Jordan",
-    "content": "Robert, I never returned your camping gear. I had to sell it to pay for food. I know that makes me a terrible person but I was desperate.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-15T16:00:00Z",
-    "sender": "Jordan",
-    "content": "House down payment? I can't even afford a security deposit for an apartment. Homeownership is a fantasy for people like me who've ruined their credit.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-18T13:45:00Z",
-    "sender": "Jordan",
-    "content": "Boss wants to meet about my performance again. I know I've been unreliable but I don't know how to change. Everything feels impossible.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-20T17:30:00Z",
-    "sender": "Jordan",
-    "content": "Friend asked me to be their emergency contact but I can't even handle my own emergencies. I'm not reliable enough for that responsibility.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-22T10:15:00Z",
-    "sender": "Jordan",
-    "content": "Tried to apply for a new apartment but my credit is so bad they won't even consider me. My past mistakes follow me everywhere.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-25T14:00:00Z",
-    "sender": "Jordan",
-    "content": "Collection agency called again. I owe so much money to so many people I've lost track. It's overwhelming and I just want to hide.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-08-28T19:45:00Z",
-    "sender": "Jordan",
-    "content": "End of month and I'm broke again. Spent money I didn't have on things I didn't need. I have no self-control with finances.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-01T11:30:00Z",
-    "sender": "Jordan",
-    "content": "September and still no rent money. I've been evicted and I'm staying with different friends each night. I've hit rock bottom.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-03T16:20:00Z",
-    "sender": "Jordan",
-    "content": "Job interview tomorrow but I don't have proper clothes or transportation. How can I convince them I'm reliable when my life is chaos?",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-05T08:45:00Z",
-    "sender": "Jordan",
-    "content": "Missed the job interview because I overslept and my phone died. They probably think I'm a flake. They'd be right.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-08T21:15:00Z",
-    "sender": "Jordan",
-    "content": "Family won't lend me money anymore. They say I need to get my act together first. I understand but it hurts to be cut off.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-10T13:30:00Z",
-    "sender": "Jordan",
-    "content": "Tried to get a payday loan but even they rejected me. When predatory lenders won't take you, you know you're in trouble.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-12T18:00:00Z",
-    "sender": "Jordan",
-    "content": "Friend offered me a place to stay but I'm afraid I'll mess it up like everything else. I don't want to disappoint another person.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-15T10:45:00Z",
-    "sender": "Jordan",
-    "content": "Went to a financial counselor but left halfway through. Hearing about budgets and planning just makes me more anxious.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-18T15:30:00Z",
-    "sender": "Jordan",
-    "content": "Someone offered me a job but it requires reliable transportation. I can't even afford bus fare consistently. Had to turn it down.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-20T22:15:00Z",
-    "sender": "Jordan",
-    "content": "Bankruptcy lawyer says even that might not help because of my pattern of financial irresponsibility. I've ruined everything.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-22T12:00:00Z",
-    "sender": "Jordan",
-    "content": "Tried to sell my stuff to pay debts but I don't own anything valuable. Years of poor decisions left me with nothing.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-25T17:45:00Z",
-    "sender": "Jordan",
-    "content": "Social worker wants to help but I keep missing appointments. I self-sabotage every opportunity because I don't think I deserve help.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-09-28T09:30:00Z",
-    "sender": "Jordan",
-    "content": "End of another month with nothing to show for it. I'm 30 and have negative net worth, no home, no car, no prospects. Complete failure.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-01T14:15:00Z",
-    "sender": "Jordan",
-    "content": "October already and I'm still homeless. Friends are getting tired of me crashing on their couches. I don't blame them.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-03T19:00:00Z",
-    "sender": "Jordan",
-    "content": "Shelter has a waiting list. Even homeless services don't have room for me. I've fallen through every safety net.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-05T11:45:00Z",
-    "sender": "Jordan",
-    "content": "Temp agency won't work with me anymore. Too many no-shows and unreliable behavior. I've burned every bridge.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-08T16:30:00Z",
-    "sender": "Jordan",
-    "content": "Health problems getting worse but I can't afford treatment. Stress and poor living conditions are taking their toll.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-10T20:45:00Z",
-    "sender": "Jordan",
-    "content": "Someone offered to help me get back on my feet but I'm too proud and too scared. What if I mess it up again?",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-12T13:20:00Z",
-    "sender": "Jordan",
-    "content": "Library computer time is up. Can't even afford internet to look for jobs. Every day feels like I'm falling further behind.",
-    "messageType": "text",
-    "platform": "imessage"
-  },
-  {
-    "timestamp": "2024-10-15T18:15:00Z",
-    "sender": "Jordan",
-    "content": "Winter is coming and I don't have warm clothes or a place to stay. My poor decisions have led to this desperate situation.",
-    "messageType": "text",
-    "platform": "imessage"
+    "id": 20,
+    "userId": "jordan_unreliable_001",
+    "content": "Woke up in a cold sweat thinking about money again. This financial stress is ruining my sleep and health.",
+    "timestamp": "2024-02-03T03:28:00Z",
+    "messageType": "stress_impact"
   }
 ]

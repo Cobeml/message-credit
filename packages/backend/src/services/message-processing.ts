@@ -5,17 +5,16 @@ import path from 'path';
 import crypto from 'crypto';
 import { PrismaClient } from '@prisma/client';
 import winston from 'winston';
-import {
+import type {
   MessageUpload,
   MessageFormat,
   FileUploadStatus,
   ParsedMessage,
   MessageParsingResult,
   FileValidationResult,
-  UploadProgress,
-  APIError,
-  ErrorCodes
+  UploadProgress
 } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || 'info',
@@ -587,7 +586,7 @@ export class MessageProcessingService {
         fileSize,
         mimeType,
         format,
-        status: FileUploadStatus.PENDING,
+        status: 'pending',
         uploadedAt: new Date(),
         expiresAt,
         processingProgress: 0,

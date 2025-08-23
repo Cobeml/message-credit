@@ -1,16 +1,15 @@
 // Message file upload controller with security and privacy features
 
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import multer from 'multer';
 import { MessageProcessingService } from '../services/message-processing.js';
-import { 
-  APIResponse, 
-  APIError, 
-  ErrorCodes, 
+import type { 
+  APIResponse,
   MessageFormat,
   FileUploadStatus 
 } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 import winston from 'winston';
 
 const logger = winston.createLogger({

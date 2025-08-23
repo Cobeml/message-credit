@@ -1,7 +1,8 @@
 // User management service with privacy controls
 
 import { PrismaClient } from '@prisma/client';
-import { User, UserProfile, GDPRConsent, APIError, ErrorCodes, AuditLog } from '../types/index.js';
+import type { User, UserProfile, GDPRConsent, AuditLog } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 import winston from 'winston';
 
 const logger = winston.createLogger({

@@ -1,7 +1,8 @@
 // Authentication and authorization middleware
 
-import { Request, Response, NextFunction } from 'express';
-import { AuthService, AuthUser } from '../services/auth.js';
+import type { Request, Response, NextFunction } from 'express';
+import { AuthService } from '../services/auth.js';
+import type { AuthUser } from '../services/auth.js';
 import { PrismaClient } from '@prisma/client';
 import { APIError, ErrorCodes } from '../types/index.js';
 import winston from 'winston';

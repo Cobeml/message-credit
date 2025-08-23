@@ -1,5 +1,5 @@
 // Blockchain controller for loan management API endpoints
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { 
   SuiBlockchainService, 
   createZKProof, 

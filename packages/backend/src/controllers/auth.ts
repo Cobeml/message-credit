@@ -1,9 +1,11 @@
 // Authentication controllers for user registration, login, and token management
 
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import { AuthService, RegisterUserData, LoginCredentials } from '../services/auth.js';
-import { APIResponse, APIError, ErrorCodes } from '../types/index.js';
+import { AuthService } from '../services/auth.js';
+import type { RegisterUserData, LoginCredentials } from '../services/auth.js';
+import type { APIResponse } from '../types/index.js';
+import { APIError, ErrorCodes } from '../types/index.js';
 import { z } from 'zod';
 import winston from 'winston';
 
