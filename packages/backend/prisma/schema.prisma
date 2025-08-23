@@ -1,0 +1,330 @@
+// Prisma schema for community P2P lending platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model with profile and privacy controls
+model User {
+  id                    String   @id @default(cuid())
+  email                 String   @unique
+  firstName             String
+  lastName              String
+  dateOfBirth           DateTime?
+  location              Json? // { country, region, city }
+  languages             String[] @default([])
+  digitalLiteracyLevel  Int      @default(1) // 1-5 scale
+  isActive              Boolean  @default(true)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Relations
+  auth                  UserAuth?
+  profile               UserProfile?
+  communityMemberships  CommunityMembership[]
+  borrowedLoans         Loan[] @relation("BorrowerLoans")
+  lendedLoans           Loan[] @relation("LenderLoans")
+  aiAnalyses            AIAnalysis[]
+  zkProofs              ZKProof[]
+  gdprConsent           GDPRConsent?
+  trustConnections      TrustConnection[] @relation("TrustFrom")
+  receivedTrust         TrustConnection[] @relation("TrustTo")
+  endorsements          Endorsement[] @relation("EndorsementFrom")
+  receivedEndorsements  Endorsement[] @relation("EndorsementTo")
+
+  @@map("users")
+}
+
+// Secure authentication data separated from user profile
+model UserAuth {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  passwordHash          String
+  lastPasswordChange    DateTime @default(now())
+  failedLoginAttempts   Int      @default(0)
+  lockedUntil           DateTime?
+  twoFactorEnabled      Boolean  @default(false)
+  twoFactorSecret       String?
+  backupCodes           String[] @default([])
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_auth")
+}
+
+// Extended user profile information
+model UserProfile {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  phoneNumber           String?
+  occupation            String?
+  monthlyIncome         Decimal? // Encrypted in application layer
+  employmentStatus      String?
+  bankAccountVerified   Boolean  @default(false)
+  identityVerified      Boolean  @default(false)
+  profilePictureUrl     String?
+  bio                   String?
+  preferredLoanTypes    String[] @default([])
+  maxLoanAmount         Decimal?
+  riskTolerance         String   @default("medium") // low, medium, high
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+// Community structure and management
+model Community {
+  id                    String   @id @default(cuid())
+  name                  String
+  description           String?
+  memberCount           Int      @default(0)
+  isActive              Boolean  @default(true)
+  maxLoanAmount         Decimal?
+  defaultInterestRate   Decimal?
+  lendingRules          Json? // Community-specific lending rules
+  governanceModel       Json? // Governance structure
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Relations
+  memberships           CommunityMembership[]
+  loans                 Loan[]
+
+  @@map("communities")
+}
+
+// Community membership with roles and reputation
+model CommunityMembership {
+  id                    String   @id @default(cuid())
+  userId                String
+  communityId           String
+  role                  String   @default("member") // member, moderator, admin
+  reputationScore       Decimal  @default(0)
+  joinedAt              DateTime @default(now())
+  isActive              Boolean  @default(true)
+  endorsementCount      Int      @default(0)
+  successfulLoans       Int      @default(0)
+  defaultedLoans        Int      @default(0)
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  community             Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, communityId])
+  @@map("community_memberships")
+}
+
+// Loan management with privacy and blockchain integration
+model Loan {
+  id                    String   @id @default(cuid())
+  borrowerId            String
+  lenderId              String?
+  communityId           String
+  amount                Decimal
+  interestRate          Decimal
+  duration              Int // in days
+  purpose               String
+  status                String   @default("pending") // pending, funded, active, completed, defaulted, disputed
+  zkProofHash           String?
+  suiTransactionId      String?
+  encryptedDetails      String? // Encrypted loan details
+  applicationDate       DateTime @default(now())
+  fundedDate            DateTime?
+  completedDate         DateTime?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Relations
+  borrower              User     @relation("BorrowerLoans", fields: [borrowerId], references: [id])
+  lender                User?    @relation("LenderLoans", fields: [lenderId], references: [id])
+  community             Community @relation(fields: [communityId], references: [id])
+  repaymentSchedule     RepaymentSchedule[]
+  payments              Payment[]
+
+  @@map("loans")
+}
+
+// Repayment schedule and tracking
+model RepaymentSchedule {
+  id                    String   @id @default(cuid())
+  loanId                String
+  installmentNumber     Int
+  dueDate               DateTime
+  principalAmount       Decimal
+  interestAmount        Decimal
+  totalAmount           Decimal
+  isPaid                Boolean  @default(false)
+  paidDate              DateTime?
+  paidAmount            Decimal?
+  createdAt             DateTime @default(now())
+
+  // Relations
+  loan                  Loan     @relation(fields: [loanId], references: [id], onDelete: Cascade)
+
+  @@unique([loanId, installmentNumber])
+  @@map("repayment_schedules")
+}
+
+// Payment tracking
+model Payment {
+  id                    String   @id @default(cuid())
+  loanId                String
+  amount                Decimal
+  paymentDate           DateTime @default(now())
+  paymentMethod         String
+  transactionId         String?
+  suiTransactionId      String?
+  status                String   @default("completed") // pending, completed, failed
+  notes                 String?
+
+  // Relations
+  loan                  Loan     @relation(fields: [loanId], references: [id])
+
+  @@map("payments")
+}
+
+// AI analysis and trustworthiness scoring
+model AIAnalysis {
+  id                    String   @id @default(cuid())
+  userId                String
+  messageHistoryHash    String // Hash of analyzed content for privacy
+  conscientiousness     Decimal // 0-100
+  neuroticism           Decimal // 0-100
+  agreeableness         Decimal // 0-100
+  openness              Decimal // 0-100
+  extraversion          Decimal // 0-100
+  trustworthinessScore  Decimal // Final calculated score
+  confidenceLevel       Decimal // 0-100
+  modelVersion          String
+  analysisDate          DateTime @default(now())
+  expiresAt             DateTime
+  isActive              Boolean  @default(true)
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  biasFlags             BiasFlag[]
+
+  @@map("ai_analyses")
+}
+
+// Bias detection and mitigation tracking
+model BiasFlag {
+  id                    String   @id @default(cuid())
+  aiAnalysisId          String
+  type                  String // demographic, algorithmic, etc.
+  severity              String // low, medium, high
+  description           String
+  mitigationApplied     Boolean  @default(false)
+  mitigationDetails     String?
+  flaggedAt             DateTime @default(now())
+  resolvedAt            DateTime?
+
+  // Relations
+  aiAnalysis            AIAnalysis @relation(fields: [aiAnalysisId], references: [id], onDelete: Cascade)
+
+  @@map("bias_flags")
+}
+
+// Zero-knowledge proof management
+model ZKProof {
+  id                    String   @id @default(cuid())
+  userId                String
+  proofType             String // trust_score, income_range, identity, loan_history
+  proofData             Bytes // Serialized proof
+  publicInputs          Json // Public inputs for verification
+  verificationStatus    Boolean  @default(false)
+  circuitVersion        String
+  generatedAt           DateTime @default(now())
+  expiresAt             DateTime
+  isActive              Boolean  @default(true)
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("zk_proofs")
+}
+
+// GDPR compliance and consent management
+model GDPRConsent {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  dataProcessingConsent Boolean  @default(false)
+  aiAnalysisConsent     Boolean  @default(false)
+  marketingConsent      Boolean  @default(false)
+  dataRetentionPeriod   Int      @default(365) // days
+  consentDate           DateTime @default(now())
+  lastUpdated           DateTime @updatedAt
+  withdrawalDate        DateTime?
+  isActive              Boolean  @default(true)
+
+  // Relations
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("gdpr_consents")
+}
+
+// Trust network and social connections
+model TrustConnection {
+  id                    String   @id @default(cuid())
+  fromUserId            String
+  toUserId              String
+  trustLevel            Decimal  @default(0) // 0-100
+  connectionType        String // friend, family, colleague, community
+  establishedDate       DateTime @default(now())
+  lastInteraction       DateTime?
+  isActive              Boolean  @default(true)
+
+  // Relations
+  fromUser              User     @relation("TrustFrom", fields: [fromUserId], references: [id])
+  toUser                User     @relation("TrustTo", fields: [toUserId], references: [id])
+
+  @@unique([fromUserId, toUserId])
+  @@map("trust_connections")
+}
+
+// Community endorsements and references
+model Endorsement {
+  id                    String   @id @default(cuid())
+  fromUserId            String
+  toUserId              String
+  endorsementType       String // character, financial, professional
+  message               String?
+  rating                Int // 1-5
+  isPublic              Boolean  @default(true)
+  createdAt             DateTime @default(now())
+  isActive              Boolean  @default(true)
+
+  // Relations
+  fromUser              User     @relation("EndorsementFrom", fields: [fromUserId], references: [id])
+  toUser                User     @relation("EndorsementTo", fields: [toUserId], references: [id])
+
+  @@map("endorsements")
+}
+
+// Audit trail for compliance and transparency
+model AuditLog {
+  id                    String   @id @default(cuid())
+  userId                String?
+  action                String
+  entityType            String // user, loan, community, etc.
+  entityId              String
+  oldValues             Json?
+  newValues             Json?
+  ipAddress             String?
+  userAgent             String?
+  timestamp             DateTime @default(now())
+
+  @@map("audit_logs")
+}

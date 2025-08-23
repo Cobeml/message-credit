@@ -1,0 +1,18 @@
+{
+  "name": "@community-lending/smart-contracts",
+  "version": "1.0.0",
+  "description": "Sui Move smart contracts for loan management",
+  "private": true,
+  "scripts": {
+    "build": "sui move build",
+    "test": "sui move test",
+    "publish": "sui client publish --gas-budget 100000000",
+    "lint": "sui move build --lint",
+    "format": "sui move build --format"
+  },
+  "devDependencies": {
+    "@mysten/sui.js": "^0.41.0",
+    "typescript": "^5.1.0",
+    "@types/node": "^20.4.0"
+  }
+}
