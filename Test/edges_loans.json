@@ -1,0 +1,222 @@
+[
+  {
+    "src_id": "P001",
+    "dst_id": "P002",
+    "edgeType": "peer",
+    "associationRate": 389,
+    "eventTime": "2025-08-10T02:46:00Z",
+    "notes": "Loan from P001 to P002 amount $11,200",
+    "loanAmountUSD": 11200,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P001",
+    "dst_id": "P003",
+    "edgeType": "collaborator",
+    "associationRate": 511,
+    "eventTime": "2025-08-01T16:05:00Z",
+    "notes": "Loan from P001 to P003 amount $14,700",
+    "loanAmountUSD": 14700,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P002",
+    "dst_id": "P003",
+    "edgeType": "friend",
+    "associationRate": 398,
+    "eventTime": "2025-06-11T09:20:00Z",
+    "notes": "Loan from P002 to P003 amount $27,400",
+    "loanAmountUSD": 27400,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P003",
+    "dst_id": "P004",
+    "edgeType": "collaborator",
+    "associationRate": 290,
+    "eventTime": "2025-07-11T12:38:00Z",
+    "notes": "Loan from P003 to P004 amount $8,800",
+    "loanAmountUSD": 8800,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P004",
+    "dst_id": "P005",
+    "edgeType": "peer",
+    "associationRate": 56,
+    "eventTime": "2025-06-14T01:01:00Z",
+    "notes": "Loan from P004 to P005 amount $11,900",
+    "loanAmountUSD": 11900,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P005",
+    "dst_id": "P001",
+    "edgeType": "collaborator",
+    "associationRate": 539,
+    "eventTime": "2025-08-03T04:20:00Z",
+    "notes": "Loan from P005 to P001 amount $16,000",
+    "loanAmountUSD": 16000,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P003",
+    "edgeType": "peer",
+    "associationRate": 122,
+    "eventTime": "2025-06-20T18:31:00Z",
+    "notes": "Loan from P006 to P003 amount $7,500",
+    "loanAmountUSD": 7500,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P007",
+    "edgeType": "friend",
+    "associationRate": 258,
+    "eventTime": "2025-03-11T01:25:00Z",
+    "notes": "Loan from P006 to P007 amount $15,900",
+    "loanAmountUSD": 15900,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P007",
+    "dst_id": "P008",
+    "edgeType": "peer",
+    "associationRate": 198,
+    "eventTime": "2025-05-30T22:46:00Z",
+    "notes": "Loan from P007 to P008 amount $3,500",
+    "loanAmountUSD": 3500,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P008",
+    "dst_id": "P009",
+    "edgeType": "collaborator",
+    "associationRate": 275,
+    "eventTime": "2025-06-02T11:43:00Z",
+    "notes": "Loan from P008 to P009 amount $3,700",
+    "loanAmountUSD": 3700,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P009",
+    "dst_id": "P010",
+    "edgeType": "peer",
+    "associationRate": 384,
+    "eventTime": "2025-03-29T01:40:00Z",
+    "notes": "Loan from P009 to P010 amount $17,000",
+    "loanAmountUSD": 17000,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P010",
+    "dst_id": "P006",
+    "edgeType": "collaborator",
+    "associationRate": 900,
+    "eventTime": "2025-04-16T11:04:00Z",
+    "notes": "Loan from P010 to P006 amount $7,900",
+    "loanAmountUSD": 7900,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P002",
+    "dst_id": "P006",
+    "edgeType": "manager_of",
+    "associationRate": 502,
+    "eventTime": "2025-04-26T19:44:00Z",
+    "notes": "Loan from P002 to P006 amount $34,500",
+    "loanAmountUSD": 34500,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P006",
+    "dst_id": "P002",
+    "edgeType": "reports_to",
+    "associationRate": 521,
+    "eventTime": "2025-03-31T06:44:00Z",
+    "notes": "Loan from P006 to P002 amount $32,100",
+    "loanAmountUSD": 32100,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P004",
+    "dst_id": "P007",
+    "edgeType": "manager_of",
+    "associationRate": 844,
+    "eventTime": "2025-05-04T05:35:00Z",
+    "notes": "Loan from P004 to P007 amount $180,100",
+    "loanAmountUSD": 180100,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P007",
+    "dst_id": "P004",
+    "edgeType": "reports_to",
+    "associationRate": 702,
+    "eventTime": "2025-07-17T07:29:00Z",
+    "notes": "Loan from P007 to P004 amount $12,400",
+    "loanAmountUSD": 12400,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P005",
+    "dst_id": "P008",
+    "edgeType": "collaborator",
+    "associationRate": 361,
+    "eventTime": "2025-08-09T20:51:00Z",
+    "notes": "Loan from P005 to P008 amount $10,700",
+    "loanAmountUSD": 10700,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P009",
+    "dst_id": "P001",
+    "edgeType": "peer",
+    "associationRate": 516,
+    "eventTime": "2025-02-28T10:22:00Z",
+    "notes": "Loan from P009 to P001 amount $22,800",
+    "loanAmountUSD": 22800,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P003",
+    "dst_id": "P009",
+    "edgeType": "peer",
+    "associationRate": 610,
+    "eventTime": "2025-08-05T11:36:00Z",
+    "notes": "Loan from P003 to P009 amount $18,500",
+    "loanAmountUSD": 18500,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  },
+  {
+    "src_id": "P008",
+    "dst_id": "P002",
+    "edgeType": "collaborator",
+    "associationRate": 625,
+    "eventTime": "2025-03-22T09:27:00Z",
+    "notes": "Loan from P008 to P002 amount $8,400",
+    "loanAmountUSD": 8400,
+    "loanCurrency": "USD",
+    "strengthNormalizedPerSource": true
+  }
+]
